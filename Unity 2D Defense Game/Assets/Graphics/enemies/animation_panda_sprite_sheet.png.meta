@@ -1,0 +1,982 @@
+fileFormatVersion: 2
+guid: fd1b10421f350624292f566f9b21bbf4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: animation_panda_walk_0
+    21300002: animation_panda_walk_1
+    21300004: animation_panda_walk_2
+    21300006: animation_panda_walk_3
+    21300008: animation_panda_walk_4
+    21300010: animation_panda_walk_5
+    21300012: animation_panda_walk_6
+    21300014: animation_panda_walk_7
+    21300016: animation_panda_walk_8
+    21300018: animation_panda_walk_9
+    21300020: animation_panda_walk_10
+    21300022: animation_panda_die_0
+    21300024: animation_panda_die_1
+    21300026: animation_panda_die_2
+    21300028: animation_panda_die_3
+    21300030: animation_panda_die_4
+    21300032: animation_panda_die_5
+    21300034: animation_panda_die_6
+    21300036: animation_panda_die_7
+    21300038: animation_panda_die_8
+    21300040: animation_panda_die_9
+    21300042: animation_panda_hit_0
+    21300044: animation_panda_hit_1
+    21300046: animation_panda_hit_2
+    21300048: animation_panda_hit_3
+    21300050: animation_panda_hit_4
+    21300052: animation_panda_eat_0
+    21300054: animation_panda_eat_1
+    21300056: animation_panda_eat_2
+    21300058: animation_panda_eat_3
+    21300060: animation_panda_eat_4
+    21300062: animation_panda_eat_5
+    21300064: animation_panda_eat_6
+    21300066: animation_panda_eat_7
+    21300068: animation_panda_eat_8
+    21300070: animation_panda_eat_9
+    21300072: animation_panda_eat_10
+    21300074: animation_panda_eat_11
+    21300076: animation_panda_eat_12
+    21300078: animation_panda_eat_13
+    21300080: animation_panda_eat_14
+    21300082: animation_panda_eat_15
+    21300084: animation_panda_sprite_sheet_42
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation_panda_walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5551.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615ecde3038d22a488a497c12e07c752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 5551.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4795ab69271fcba4299e1e31b312f9db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_2
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 5551.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da37b268742ebe488495154723c2aee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_3
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 5552
+        width: 680
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74323acd6e50cf342942204f6d75f050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_4
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 5551.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a219a6fe27704484ea33120870f8dd04
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_5
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 5543
+        width: 680
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9290fb7ba5364e4cbe905afc1ae333e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4996.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2c5355e4b3e614d86b818318f197e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 4996.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ff0e0abbfaefc469eebf019f79cd5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_8
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 4988
+        width: 680
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232f20b23897b5341b653fa9732eafaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 4996.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242ada400d643ff479ee4934e84c9e90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_walk_10
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 4996.8184
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77701e95e78cf2347925bbf939c3cdd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b1fdbed9739c743a4940c6dbc4abf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99d1489268f91247869d3daa9695b59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_2
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2516d8d64ff4d4d859f7f3e8b49070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_3
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7776464cdcd3dc46a6c93d07ba7483a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_4
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6c8faa0b5c1e644849fe655cda7d53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_5
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 3886.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6330b8cc30eb5f4189069080abeb864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3331.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd2493fca4b63749b451c16cc4cd68a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 3331.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7d9aadea8966548845f9291a0bd71b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_8
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 3331.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f52a45611471548af5c64b886b77f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_die_9
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 3331.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5050226d416b74e4aaf349aa1761a0d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_hit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2221.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9654157b768684dae98829c536bef3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_hit_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 2221.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833b7fe70d5425c4dab99a0cd8e0d234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_hit_2
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 2221.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a814d434e38a64aa77bf036e5d1fd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_hit_3
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 2221.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb35015419e9e0642b44afe996e8d551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_hit_4
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 2221.818
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a37786660e6024ba1009abb0e6a61e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08040f42996c7d4da456809b630b8e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7adef42badd8e4ca563319ecbd1a09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_2
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8ec2d8c64554d488521fe68c4eaeeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_3
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df69458d0dfa0046a8a05c2b4503e97
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_4
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5e4e5ca7d827146a1ccdc3a3192e16
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_5
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 1111.8181
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4925a7c9eb9fc94a90f95ed7664aa80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d268c6e8b517174449fd427bc1e495c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ddf83c59be3b249bf51b3d01557fbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_8
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb7788da6d4bf24da9be70285a92356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_9
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa415894a476564d8220f6774d8bb8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_10
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1afd0ea95a9cf04c89b14c1f2c16621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_11
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 556.8182
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928f43afd6d051248a38c62a21380b07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.8181763
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84143cadf6224d54d919c8083defae39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_13
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1.8181763
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5884122aab385ed448b8ec7ff1dc8146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_14
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 1.8181763
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50ac865a444e564cbe2fdf4d389e2d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation_panda_eat_15
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1.8181763
+        width: 680.1667
+        height: 555.1818
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d032d450adcd417498200eee035dece2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3b710be00760bb343a1fc345e56131ac
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
