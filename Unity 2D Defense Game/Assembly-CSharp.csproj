@@ -55,6 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileScript.cs" />
+     <None Include="Assets\Graphics\License.txt" />
+     <None Include="Assets\Graphics\Readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/rolyp/Desktop/2019-1-OSSP1-UnityDefenseGame-8/Unity 2D Defense Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
