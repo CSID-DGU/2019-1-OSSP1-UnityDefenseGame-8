@@ -21,7 +21,7 @@ public class ProjectileScript : MonoBehaviour
         //Fix the rotation
         float angle = Mathf.Atan2(-direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        Debug.Log(angle);
         //Set the timer for self-destruction
         Destroy(gameObject, lifeDuration);
     }
