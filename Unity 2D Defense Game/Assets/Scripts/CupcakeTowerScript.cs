@@ -87,7 +87,10 @@ public class CupcakeTowerScript : MonoBehaviour
 
                 //Create the Projectile
                 GameObject projectile = GameObject.Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-                projectile.GetComponent<ProjectileScript>().direction = direction;
+                // 발사체의 곡선 발사를 위해 target을 발사체에 전달해준다. 
+                projectile.GetComponent<ProjectileScript>().target = target;
+                // 발사체를 발사한 컵케이크 타워의 위치를 발사체에 전달해준다.
+                projectile.GetComponent<ProjectileScript>().start = transform.position;
             }
         }
         elapsedTime += Time.deltaTime;
