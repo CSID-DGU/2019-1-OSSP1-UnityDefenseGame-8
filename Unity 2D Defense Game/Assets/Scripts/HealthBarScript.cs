@@ -58,12 +58,9 @@ public class HealthBarScript : MonoBehaviour {
     //Function to update the Health Bar Graphic
     void updateHealthBar() {
         //Calculate the percentage (from 0% to 100%) of the current amount of health of the player
-        //float percentage = health * 1f / maxHealth;
+        float percentage = health * 1f / maxHealth;
         //Assign the percentage to the fillingAmount variable of the "Health_Bar_Filling"
-        //fillingImage.fillAmount = percentage;
-
-        // test
-        float percentage = fillingImage.fillAmount * 1f;
+        fillingImage.fillAmount = percentage;
 
         // HP가 40% 이상, 20% 이상, 20%미만일 때를 기준으로 각각 HealthBar의 색상 변경
         if(percentage > 0.4f)

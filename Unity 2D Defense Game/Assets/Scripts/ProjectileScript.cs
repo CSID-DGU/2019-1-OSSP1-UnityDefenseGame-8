@@ -19,13 +19,13 @@ public class ProjectileScript : MonoBehaviour
     void Start()
     {
         //Set the timer for self-destruction
+        end = target.position;
         Destroy(gameObject, lifeDuration);
     }
 
     // Update the position of the projectile according to time and speed
     void Update()
     {
-        end = target.position;
         if (time < duration)
         {
             time += Time.deltaTime;

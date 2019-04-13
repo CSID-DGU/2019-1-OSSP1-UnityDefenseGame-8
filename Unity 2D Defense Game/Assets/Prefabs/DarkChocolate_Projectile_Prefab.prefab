@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710390479995412211}
   - component: {fileID: 1277075454561915609}
-  - component: {fileID: 4829856582569395181}
+  - component: {fileID: 246271546105128208}
   m_Layer: 0
   m_Name: DarkChocolate_Projectile_Prefab
   m_TagString: Projectile
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4829856582569395181
+--- !u!114 &246271546105128208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  speed: 1
-  direction: {x: 0, y: 0, z: 0}
   lifeDuration: 10
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.8853188
+      outSlope: 3.8853188
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05568618
+    - serializedVersion: 3
+      time: 0.50143874
+      value: 0.9977509
+      inSlope: 0.026476247
+      outSlope: 0.026476247
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.17158493
+    - serializedVersion: 3
+      time: 0.996521
+      value: 0.002357483
+      inSlope: -3.9558992
+      outSlope: -3.9558992
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04937418
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  target: {fileID: 0}
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}
+  projectile_max_height: 3
