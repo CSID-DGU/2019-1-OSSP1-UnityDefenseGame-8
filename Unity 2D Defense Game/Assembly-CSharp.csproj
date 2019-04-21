@@ -55,7 +55,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
+     <Compile Include="Assets\Scripts\PandaScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileScript.cs" />
+     <Compile Include="Assets\Scripts\StateMachineBehaviour_DestroyOnExit.cs" />
      <Compile Include="Assets\Scripts\SugarMeterScript.cs" />
      <None Include="Assets\Graphics\License.txt" />
      <None Include="Assets\Graphics\Readme.txt" />
