@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PandaScript : MonoBehaviour {
 
+    public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
+
     //Private variable to store the animator for handling animations
     private Animator animator;
 
@@ -17,6 +19,7 @@ public class PandaScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
 	}
@@ -28,9 +31,12 @@ public class PandaScript : MonoBehaviour {
 
     //Function that based on the speed of the Panda makes it moving towards the destination point, specified as Vector3
     private void MoveTowards(Vector3 destination) {
-        //Create a step and then move in towards destination of one step
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        if (moveable)
+        {
+            //Create a step and then move in towards destination of one step
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        }
     }
 
     /* Function that takes as input the damage that Panda received when hit by a sprinkle.
