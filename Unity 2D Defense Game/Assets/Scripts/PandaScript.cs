@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PandaScript : MonoBehaviour {
 
+    private Rigidbody2D rb2d;
+
     public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
 
     //Private variable to store the animator for handling animations
@@ -19,6 +21,7 @@ public class PandaScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        rb2d = GetComponent<Rigidbody2D>();
         moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
@@ -29,13 +32,18 @@ public class PandaScript : MonoBehaviour {
         
 	}
 
+    void FixedUpdate()
+    {
+        // MoveTowards() 함수는 여기서 실행되어야 함
+    }
+
     //Function that based on the speed of the Panda makes it moving towards the destination point, specified as Vector3
     private void MoveTowards(Vector3 destination) {
         if (moveable)
         {
             //Create a step and then move in towards destination of one step
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, destination, step);
+            float step = speed * Time.fixedDeltaTime;
+            rb2d.MovePosition(Vector3.MoveTowards(transform.position, destination, step));
         }
     }
 

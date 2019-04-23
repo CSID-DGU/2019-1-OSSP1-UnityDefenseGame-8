@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8710506730695101053}
   - component: {fileID: 8710506730695101052}
   - component: {fileID: 8901982351077836530}
+  - component: {fileID: 1509091210640903229}
   m_Layer: 0
   m_Name: PandaPrefab
   m_TagString: Untagged
@@ -112,5 +113,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e749305f64dba8489eb18970da94070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveable: 0
   speed: 0
   health: 0
+--- !u!50 &1509091210640903229
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710506730695101055}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
