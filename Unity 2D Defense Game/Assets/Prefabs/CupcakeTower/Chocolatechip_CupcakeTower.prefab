@@ -96,7 +96,7 @@ MonoBehaviour:
   - {fileID: 21300006, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300008, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300010, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
-  rangeRadius: 0
-  reloadTime: 0
+  rangeRadius: 30
+  reloadTime: 0.3
   projectilePrefab: {fileID: 1930479933805910815, guid: a8ef206a647f59240bfd27a7e6253947,
     type: 3}

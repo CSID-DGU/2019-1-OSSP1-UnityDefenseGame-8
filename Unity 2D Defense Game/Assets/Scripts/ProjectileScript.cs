@@ -12,7 +12,7 @@ public class ProjectileScript : MonoBehaviour
     public Transform target;    // 발사체가 맞출 목표물의 위치정보
     public Vector2 start;  // 발사체의 시작지점(이 발사체를 발사한 컵케이크 타워의 위치정보)
     public Vector2 end;
-    private float duration = 1f; // 발사 시작-끝 점까지의 시간
+    public float duration = 1f; // 발사 시작-끝 점까지의 시간
     private float time = 0f;    // 발사 시작부터 지난 시간
     public float projectile_max_height = 3f;    // 발사체의 최대 높이
 

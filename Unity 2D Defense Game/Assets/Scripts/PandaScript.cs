@@ -61,10 +61,23 @@ public class PandaScript : MonoBehaviour {
         else {
             animator.SetTrigger(AnimHitTriggerHash);
         }
+        Debug.Log("Panda Health:" + health);
     }
 
     private void Eat()
     {
         animator.SetTrigger(AnimEatTriggerHash);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 충돌한 오브젝트의 tag가 발사체인지 확인
+        if (other.tag == "Projectile")
+        {
+            // 판다에게 발사체에 설정된 만큼의 데미지를 입힘
+            Hit(other.GetComponent<ProjectileScript>().damage);
+            // 발사체는 파괴됨
+            Destroy(other.gameObject);
+        }
     }
 }

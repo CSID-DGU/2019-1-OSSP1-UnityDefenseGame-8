@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2474193522185009073}
   - component: {fileID: 6685293007960842167}
   - component: {fileID: 3961887987208704368}
+  - component: {fileID: 996864114799008096}
   m_Layer: 0
   m_Name: Cherry_Projectile_Prefab
   m_TagString: Projectile
@@ -93,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c9318903b6b7b42b3293d96ebad8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  lifeDuration: 10
+  damage: 5
+  lifeDuration: 3
   curve:
     serializedVersion: 2
     m_Curve:
@@ -129,8 +130,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   target: {fileID: 0}
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
+  duration: 0.3
   projectile_max_height: 3
 --- !u!50 &3961887987208704368
 Rigidbody2D:
@@ -153,3 +155,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &996864114799008096
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860725043475164464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.22}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.78, y: 4.0333333}
+    newSize: {x: 3.78, y: 4.0333333}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.55, y: 3.4}
+  m_EdgeRadius: 0
