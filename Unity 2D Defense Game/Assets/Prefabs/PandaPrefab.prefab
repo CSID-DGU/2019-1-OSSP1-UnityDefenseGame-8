@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8901982351077836530}
   - component: {fileID: 1509091210640903229}
   - component: {fileID: 6702232541063826033}
+  - component: {fileID: 3809570129012155835}
   m_Layer: 0
   m_Name: PandaPrefab
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300022, guid: fd1b10421f350624292f566f9b21bbf4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 6.801667, y: 5.5518184}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8710506730695101052
@@ -154,13 +155,68 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.801667, y: 5.5518184}
+    newSize: {x: 6.801667, y: 5.5518184}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.6, y: 4.3}
   m_EdgeRadius: 0
+--- !u!60 &3809570129012155835
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710506730695101055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.801667, y: 5.5518184}
+    newSize: {x: 6.801667, y: 5.5518184}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.9989478, y: -1.2537372}
+      - {x: 0.84985113, y: -0.83626646}
+      - {x: 0.49201906, y: -0.09078299}
+      - {x: 0.7603931, y: 0.08813303}
+      - {x: 1.4164186, y: 0.74415845}
+      - {x: 1.4164186, y: 1.0423518}
+      - {x: 1.2971412, y: 1.2212678}
+      - {x: 0.37274173, y: 1.9667513}
+      - {x: -0.37274173, y: 2.294764}
+      - {x: -0.9691285, y: 2.294764}
+      - {x: -1.1182252, y: 2.0860286}
+      - {x: -1.1480445, y: 1.6983773}
+      - {x: -0.9094898, y: 1.4896419}
+      - {x: -1.0884058, y: 1.2212678}
+      - {x: -1.1480445, y: 0.50560373}
+      - {x: -0.7603931, y: -0.060963657}
+      - {x: -1.2971412, y: -0.7468084}
+      - {x: -1.2971412, y: -1.1344599}
+      - {x: -1.1182252, y: -1.3133758}
+      - {x: -1.2971412, y: -1.7308465}
+      - {x: -1.2971412, y: -2.0290399}
+      - {x: -0.9094898, y: -2.2675946}
+      - {x: -0.6112964, y: -2.2675946}
+      - {x: -0.2832837, y: -1.7606659}
+      - {x: 0.19382569, y: -2.0886786}
+      - {x: 0.40256107, y: -2.2675946}
+      - {x: 0.6112964, y: -2.2675946}
+      - {x: 0.9393091, y: -1.9694012}
+      - {x: 0.9989478, y: -1.7010273}
+      - {x: 0.7305738, y: -1.4922918}

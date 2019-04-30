@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
+     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\PandaScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileScript.cs" />
