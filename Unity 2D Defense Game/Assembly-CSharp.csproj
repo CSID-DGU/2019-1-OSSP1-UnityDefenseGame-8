@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\StateMachineBehaviour_PandaWhileBeingHit.cs" />
      <Compile Include="Assets\Scripts\SugarMeterScript.cs" />
      <Compile Include="Assets\Scripts\Waypoint.cs" />
+     <Compile Include="Assets\Scripts\WaypointChainScript.cs" />
      <None Include="Assets\Graphics\License.txt" />
      <None Include="Assets\Graphics\Readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">

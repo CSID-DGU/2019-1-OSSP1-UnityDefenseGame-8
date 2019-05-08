@@ -19,6 +19,23 @@ public class Waypoint : MonoBehaviour
         return nextWaypoint;
     }
 
+    public void SetNextWaypoint(Waypoint wp)
+    {
+        nextWaypoint = wp;
+    }
+
+    // 웨이포인트 체인 그리기
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;   // Color : Red
+
+        // 현재 웨이포인트에서 다음 웨이포인트에 선 그리기
+        if (nextWaypoint != null)
+        {
+            Gizmos.DrawLine(transform.position, nextWaypoint.transform.position);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
