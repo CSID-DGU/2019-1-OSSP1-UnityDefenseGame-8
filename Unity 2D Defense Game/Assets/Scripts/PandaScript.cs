@@ -54,15 +54,15 @@ public class PandaScript : MonoBehaviour {
             return;
         }
 
-        // calculate the distance between the current and the next waypoint
+        // 현재와 다음 waypoint사이 거리 계산
         float dist = Vector2.Distance(transform.position, currentWaypoint.GetPosition());
-        if(dist <= changeDist)
+        if(dist <= changeDist)  // 기준거리 이하
         {
-            currentWaypoint = currentWaypoint.GetNextWaypoint();    // Go to the next waypoint
+            currentWaypoint = currentWaypoint.GetNextWaypoint();    // 다음 waypoint로 현재 waypoint를 변경
         }
         else
         {
-            MoveTowards(currentWaypoint.GetPosition()); // Move towards the current waypoint
+            MoveTowards(currentWaypoint.GetPosition()); // 현재 waypoint로 이동
         }
     }
 
