@@ -5,6 +5,18 @@ public class PandaScript : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
+    // Game Manager에 대한 참조를 저장하기 위한 static 변수 추가
+    private static GameManagerScript gameManager;
+
+
+    // 현재 웨이포인트가 몇개인지 저장하는 변수
+    //private int currentWaypointNumber;
+    // 현재 웨이포인트 저장
+    private Waypoint currentWaypoint;
+
+    // 임시로 웨이포인트에 도달했다고 간주하기 위한 상수
+    private const float changeDist = 0.001f;
+
     public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
 
     //Private variable to store the animator for handling animations
@@ -21,10 +33,22 @@ public class PandaScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        // Game Manager에 대한 참조가 없을 시, 스크립트는 이 코드를 통해 얻게 됨
+        if (gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManagerScript>();
+        }
+
         rb2d = GetComponent<Rigidbody2D>();
         moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
+
+        // 첫번째 웨이포인트를 가져온다.
+        currentWaypoint = gameManager.firstWaypoint;
+
+        
 	}
 	
 	// Update is called once per frame
@@ -35,6 +59,43 @@ public class PandaScript : MonoBehaviour {
     void FixedUpdate()
     {
         // MoveTowards() 함수는 여기서 실행되어야 함
+
+        if(currentWaypoint == null)
+        {
+            animator.SetTrigger(AnimEatTriggerHash);
+            Destroy(this);
+            return;
+        }
+
+
+        // 판다가 마지막 웨이포인트, 즉 케이크에 도달
+        //if (currentWaypointNumber == gameManager.waypoints.Length)
+        //{
+        //    // Eat Animation Trigger
+        //    animator.SetTrigger(AnimEatTriggerHash);
+        //    // 판다 제거는 스테이트 머신 비헤이버가 처리
+        //    // 이 스크립트만 제거
+        //    Destroy(this);
+        //    return;
+        // }
+
+        // 현재 판다의 위치와 판다가 향하고 있는 웨이포인트 간 거리 계산
+        float dist = Vector2.Distance(transform.position, currentWaypoint.GetPosition());
+        
+        // 위에서 제시한 임시 웨이포인트 도달함수(changeDist)와 비교
+        // changeDist 이하로 dist가 좁혀진다 -> 즉, 가까워진다
+        // 웨이포인트에 도달한것으로 간주하여 웨이포인트 카운터 증가 + 1
+        if (dist <= changeDist)
+        {
+            currentWaypoint = currentWaypoint.GetNextWaypoint();
+        }
+
+        // 그렇지 않을 경우 판다는 계속해서 웨이포인트를 향해 이동
+        else
+        {
+            MoveTowards(currentWaypoint.GetPosition());
+        }
+
     }
 
     //Function that based on the speed of the Panda makes it moving towards the destination point, specified as Vector3

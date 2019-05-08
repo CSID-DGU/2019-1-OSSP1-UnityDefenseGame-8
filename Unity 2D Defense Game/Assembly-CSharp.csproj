@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\StateMachineBehaviour_DestroyOnExit.cs" />
      <Compile Include="Assets\Scripts\StateMachineBehaviour_PandaWhileBeingHit.cs" />
      <Compile Include="Assets\Scripts\SugarMeterScript.cs" />
+     <Compile Include="Assets\Scripts\Waypoint.cs" />
      <None Include="Assets\Graphics\License.txt" />
      <None Include="Assets\Graphics\Readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
