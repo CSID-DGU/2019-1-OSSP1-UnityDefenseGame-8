@@ -56,7 +56,6 @@ public class PandaScript : MonoBehaviour {
 
         // calculate the distance between the current and the next waypoint
         float dist = Vector2.Distance(transform.position, currentWaypoint.GetPosition());
-        
         if(dist <= changeDist)
         {
             currentWaypoint = currentWaypoint.GetNextWaypoint();    // Go to the next waypoint
@@ -71,9 +70,17 @@ public class PandaScript : MonoBehaviour {
     private void MoveTowards(Vector3 destination) {
         if (moveable)
         {
-            //Create a step and then move in towards destination of one step
-            //float step = speed * Time.fixedDeltaTime;
-            rb2d.MovePosition(Vector3.MoveTowards(transform.position, destination, speed));
+            Vector3 move_vector;    // 이동 벡터
+
+            // 이동 벡터 계산
+            float step = speed * Time.fixedDeltaTime;   // 한 번의 call에서 최대 이동 가능한 step. 이동벡터의 magnitude가 될 것.
+            Vector3 diff = destination - transform.position;    // 이동벡터의 x,y값 계산
+            diff.z = 0; // normalize 이전에 z값을 0으로 하여 x,y값만을 고려하게 한다.
+            diff.Normalize();
+            move_vector= transform.position + (step * diff);    // 현재 위치 + (x,y값 저장한 벡터)*magnitude
+
+            rb2d.MovePosition(move_vector); // 이동
+
         }
     }
 
