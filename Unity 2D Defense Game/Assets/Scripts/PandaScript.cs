@@ -5,6 +5,10 @@ public class PandaScript : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
+    private Waypoint currentWaypoint = null;   // 현재 판다가 향하고 있는 웨이포인트
+    private static GameManagerScript gameManager = null;   // private static GameManagerScript. 모든 판다 클래스의 인스턴스들간에 공유한다
+    private const float changeDist = 0.1f;    // 이 거리 이하면 다음 웨이포인트로 넘어감
+
     public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
 
     //Private variable to store the animator for handling animations
@@ -25,16 +29,42 @@ public class PandaScript : MonoBehaviour {
         moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
-	}
+
+        // set static GamaManagerScript variable gameManager
+        if (gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManagerScript>();
+        }
+        currentWaypoint = gameManager.firstWaypoint;  // 첫 번째 웨이포인트 지정
+    }
 	
 	// Update is called once per frame
 	void Update () {
         
 	}
 
+    // MoveTowards() 함수는 여기서 실행되어야 함
     void FixedUpdate()
     {
-        // MoveTowards() 함수는 여기서 실행되어야 함
+        // 맨 마지막 웨이포인트에 도착했다. 즉, 판다가 케이크에 도달했다
+        if(currentWaypoint == null)
+        {
+            // 케이크 먹는 애니메이션 시작. StateBehaviour script에서 Object를 Destory하므로 여기서 Destory() 부를 필요 없음
+            animator.SetTrigger(AnimEatTriggerHash);
+            return;
+        }
+
+        // calculate the distance between the current and the next waypoint
+        float dist = Vector2.Distance(transform.position, currentWaypoint.GetPosition());
+        
+        if(dist <= changeDist)
+        {
+            currentWaypoint = currentWaypoint.GetNextWaypoint();    // Go to the next waypoint
+        }
+        else
+        {
+            MoveTowards(currentWaypoint.GetPosition()); // Move towards the current waypoint
+        }
     }
 
     //Function that based on the speed of the Panda makes it moving towards the destination point, specified as Vector3
@@ -42,8 +72,8 @@ public class PandaScript : MonoBehaviour {
         if (moveable)
         {
             //Create a step and then move in towards destination of one step
-            float step = speed * Time.fixedDeltaTime;
-            rb2d.MovePosition(Vector3.MoveTowards(transform.position, destination, step));
+            //float step = speed * Time.fixedDeltaTime;
+            rb2d.MovePosition(Vector3.MoveTowards(transform.position, destination, speed));
         }
     }
 
