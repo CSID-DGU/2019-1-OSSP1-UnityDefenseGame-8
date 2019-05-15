@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PandaScript : MonoBehaviour {
 
+    public int cakeEatenPerBite;
+
     private Rigidbody2D rb2d;
 
     private Waypoint currentWaypoint = null;   // 현재 판다가 향하고 있는 웨이포인트
@@ -51,6 +53,8 @@ public class PandaScript : MonoBehaviour {
         {
             // 케이크 먹는 애니메이션 시작. StateBehaviour script에서 Object를 Destory하므로 여기서 Destory() 부를 필요 없음
             animator.SetTrigger(AnimEatTriggerHash);
+            gameManager.BiteTheCake(cakeEatenPerBite);
+            Destroy(this);
             return;
         }
 
@@ -94,6 +98,7 @@ public class PandaScript : MonoBehaviour {
         //Then it triggers the Die or the Hit animations based if the Panda is still alive
         if(health <= 0) {
             animator.SetTrigger(AnimDieTriggerHash);
+            gameManager.OneMorePandaInHeaven();
         }
         else {
             animator.SetTrigger(AnimHitTriggerHash);

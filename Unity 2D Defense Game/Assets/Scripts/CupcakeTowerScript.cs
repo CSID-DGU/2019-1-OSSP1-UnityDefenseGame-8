@@ -4,6 +4,16 @@ using System.Collections;
 //SCRIPT VERSION - END OF CHAPTER 2
 public class CupcakeTowerScript : MonoBehaviour
 {
+    // 컵케이크 초기 비용
+    public int initialCost;  
+
+    // 컵케이크 업그레이드 비용
+    public int upgradingCost;
+
+    // 컵케이크 판매 비용
+    public int sellingValue;  
+
+
 
     private int upgradeLevel;        //Level of the Cupcake Tower
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
@@ -40,6 +50,12 @@ public class CupcakeTowerScript : MonoBehaviour
 
         //Change graphics of the tower
         currentSpriteRenderer.sprite = upgradeSprites[upgradeLevel];
+
+        // 타워의 가격 증가
+        sellingValue += 5;
+
+        // 타워의 업그레이드 비용 증가
+        upgradingCost += 10;
     }
 
     public float rangeRadius;           //Maximum distance that the Cupcake Tower can shoot
@@ -94,5 +110,11 @@ public class CupcakeTowerScript : MonoBehaviour
             }
         }
         elapsedTime += Time.deltaTime;
+    }
+    // 플레이어가 컵케이크 타워를 클릭할 때 호출되는 함수
+    void OnMouseDown()
+    {
+        // 해당 선택 타워를 거래용 타워로 지정
+        TradeCupcakeTower.setActiveTower(this);
     }
 }

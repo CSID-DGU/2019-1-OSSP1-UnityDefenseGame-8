@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1991102467057841873}
   - component: {fileID: 1991102467057841878}
   - component: {fileID: 1991102467057841879}
+  - component: {fileID: 7869841046580177907}
   m_Layer: 0
   m_Name: Lemon_CupcakeTower
   m_TagString: CupcakeTower
@@ -87,11 +88,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991102467057841876}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfe01e7578b92404f9d61d21c716ff17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialCost: 10
+  upgradingCost: 15
+  sellingValue: 5
   upgradeSprites:
   - {fileID: 21300012, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300014, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
@@ -100,3 +104,15 @@ MonoBehaviour:
   reloadTime: 0
   projectilePrefab: {fileID: 9220113325886429391, guid: 332c4cb4cf485bf48ab520e20fb0da06,
     type: 3}
+--- !u!114 &7869841046580177907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991102467057841876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d851e33c0e993428cf4711ae29b8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

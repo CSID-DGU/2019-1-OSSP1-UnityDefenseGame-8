@@ -4,18 +4,18 @@ using System.Collections;
 
 public class SugarMeterScript : MonoBehaviour {
 
-    private Text sugarMeter; //Reference to the Text component
-    private int sugar; //Amount of sugar that the player possesses
+    private Text sugarMeter; //Reference to the Text component // 원래는 private
+    private int sugar; //Amount of sugar that the player possesses // 임의로 값을 주었음 // 원래는 private
 
 	void Start () {
         //Get the reference to the Sugar_Meter_Text
         sugarMeter = GetComponentInChildren<Text>();
         //Update the Sugar Meter graphic 
-        updateSugarMeter();
+        updateSugarMeter(); // 맨처음에 슈거 미터를 처음에 우리가 지정한 값으로 업데이트 해줌
     }
 	
     //Function to increase or decrease the amount of sugar
-    public void ChangeSugar(int value) {
+    public void ChangeSugar(int value) { // 슈거를 계속해서 업데이트한다
         //Increase (or decrease, if value is negative) the amount of sugar
         sugar += value;
         //Check if the amount of suguar is negative, is so set it to zero
