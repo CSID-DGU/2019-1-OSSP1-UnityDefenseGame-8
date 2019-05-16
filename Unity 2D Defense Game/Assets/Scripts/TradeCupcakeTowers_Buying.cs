@@ -10,13 +10,14 @@ public class TradeCupcakeTowers_Buying : TradeCupcakeTower
     // 팔고자 하는 컵케이크 타워 GameObject
     public GameObject cupcakeTowerPrefab;
 
+    /*
     // Use this for initialization
     void Start()
     {
-
     }
-
+    */
     // Update is called once per frame
+
     void Update()
     {
 

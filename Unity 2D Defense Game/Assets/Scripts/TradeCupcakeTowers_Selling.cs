@@ -5,13 +5,14 @@ using UnityEngine.EventSystems;
 
 public class TradeCupcakeTowers_Selling : TradeCupcakeTower
 {
-
+    /*
     // Use this for initialization
     void Start()
     {
 
     }
-    /*
+    */
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +25,7 @@ public class TradeCupcakeTowers_Selling : TradeCupcakeTower
             gameObject.SetActive(true);
         }
     }
-    */
+    
     public override void OnPointerClick(PointerEventData eventData)
     {
         // 선택된 타워가 없을 경우
