@@ -116,5 +116,8 @@ public class PandaScript : MonoBehaviour {
             // 발사체는 파괴됨
             Destroy(other.gameObject);
         }
+
+        // 충돌한 오브젝트의 tag가 playerUnit (아군팬더 등)인지 확인. 아군팬더가 공격모드일 시 데미지 받음
+        
     }
 }
