@@ -88,7 +88,7 @@ public class PandaScript : MonoBehaviour {
     *  After have detracted the damage to the amount of health of the Panda checks if the Panda
     *  is still alive, and so play the Hit animation, or if the health goes below zero the Die animation
     */
-    private void Hit(float damage) {
+    public void Hit(float damage) {
         //Subtract the damage to the health of the Panda
         health -= damage;
         //Then it triggers the Die or the Hit animations based if the Panda is still alive
@@ -98,7 +98,7 @@ public class PandaScript : MonoBehaviour {
         else {
             animator.SetTrigger(AnimHitTriggerHash);
         }
-        Debug.Log("Panda Health:" + health);
+        //Debug.Log("Panda Health:" + health);
     }
 
     private void Eat()
@@ -116,8 +116,5 @@ public class PandaScript : MonoBehaviour {
             // 발사체는 파괴됨
             Destroy(other.gameObject);
         }
-
-        // 충돌한 오브젝트의 tag가 playerUnit (아군팬더 등)인지 확인. 아군팬더가 공격모드일 시 데미지 받음
-        
     }
 }
