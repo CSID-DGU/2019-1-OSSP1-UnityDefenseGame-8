@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1215201455389288214}
   - component: {fileID: 143854393873942129}
   - component: {fileID: 7206192563091095285}
+  - component: {fileID: 7152335795581645490}
   m_Layer: 0
   m_Name: Sprinkles_CupcakeTower
   m_TagString: CupcakeTower
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123278051386900489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.81444, y: -7.0167527, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,3 +101,19 @@ MonoBehaviour:
   reloadTime: 0
   projectilePrefab: {fileID: 8342757033665276683, guid: 52ec954cfb7b96d42bf4c11106fedd10,
     type: 3}
+--- !u!58 &7152335795581645490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123278051386900489}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09, y: -1.23}
+  serializedVersion: 2
+  m_Radius: 4.471667

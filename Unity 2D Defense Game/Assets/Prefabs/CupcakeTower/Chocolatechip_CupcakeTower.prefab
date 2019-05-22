@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 35809406012466460}
   - component: {fileID: 35809406012466459}
   - component: {fileID: 35809406012466458}
+  - component: {fileID: 4115523186708795142}
   m_Layer: 0
   m_Name: Chocolatechip_CupcakeTower
   m_TagString: CupcakeTower
@@ -100,3 +101,19 @@ MonoBehaviour:
   reloadTime: 0.3
   projectilePrefab: {fileID: 1930479933805910815, guid: a8ef206a647f59240bfd27a7e6253947,
     type: 3}
+--- !u!58 &4115523186708795142
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35809406012466457}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.34, y: -0.3}
+  serializedVersion: 2
+  m_Radius: 4.471667

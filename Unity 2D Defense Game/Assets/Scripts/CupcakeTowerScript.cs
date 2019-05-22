@@ -95,4 +95,10 @@ public class CupcakeTowerScript : MonoBehaviour
         }
         elapsedTime += Time.deltaTime;
     }
+
+    // 적 판다에게 타워가 공격당해 일정시간동안 fire 불가능
+    public void Hit()
+    {
+        elapsedTime = -2f;
+    }
 }

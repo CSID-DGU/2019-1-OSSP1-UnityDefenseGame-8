@@ -23,12 +23,18 @@ public class PandaScript : MonoBehaviour {
     private int AnimHitTriggerHash = Animator.StringToHash("HitTrigger");
     private int AnimEatTriggerHash = Animator.StringToHash("EatTrigger");
 
+    private float myAttackProbability;    // 판다가 컵케이크타워를 공격할 확률
+    public float attackProbability = 0.1f;   // 이 확률로 처음 보는 컵케이크 타워를 공격할 것
+    private bool isAttackingTower;  // 이 판다가 컵케이크타워를 공격중인가?
+    private GameObject targetTower; // 공격 대상 타워
+
     // Use this for initialization
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
+        myAttackProbability = -1;
 
         // set static GamaManagerScript variable gameManager
         if (gameManager == null)
@@ -46,6 +52,23 @@ public class PandaScript : MonoBehaviour {
     // MoveTowards() 함수는 여기서 실행되어야 함
     void FixedUpdate()
     {
+        // 컵케이크 타워를 향해 공격
+        if (isAttackingTower)
+        {
+            // 컵케이크에 충분히 가까이 다가갔으므로 자폭공격
+            if(Vector2.Distance(transform.position, targetTower.transform.position) < changeDist)
+            {
+                Eat();  // 판다가 케이크를 먹고 펑 터지는 애니메이션 trigger
+                targetTower.GetComponent<CupcakeTowerScript>().Hit(); // 컵케이크 타워에 패널티를 줌
+                isAttackingTower = false;   // 공격을 완료했으므로 isAttackingTower는 false가 됨
+            }
+            else
+            { 
+                MoveTowards(targetTower.transform.position); // 공격 대상 컵케이크 방향으로 이동
+            }
+            return;
+        }
+
         // 맨 마지막 웨이포인트에 도착했다. 즉, 판다가 케이크에 도달했다
         if(currentWaypoint == null)
         {
@@ -103,6 +126,7 @@ public class PandaScript : MonoBehaviour {
 
     private void Eat()
     {
+        speed = 0;
         animator.SetTrigger(AnimEatTriggerHash);
     }
 
@@ -115,6 +139,16 @@ public class PandaScript : MonoBehaviour {
             Hit(other.GetComponent<ProjectileScript>().damage);
             // 발사체는 파괴됨
             Destroy(other.gameObject);
+        }
+        else if (other.tag == "CupcakeTower")
+        {
+            // 랜덤한 확률로 컵케이크 타워를 공격
+            myAttackProbability = Random.Range(0f, 1f);
+            if(myAttackProbability <= attackProbability)
+            {
+                targetTower = other.gameObject; // 공격 대상 설정
+                isAttackingTower = true;
+            }
         }
     }
 }

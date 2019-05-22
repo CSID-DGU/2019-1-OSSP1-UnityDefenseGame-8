@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  lifeDuration: 10
+  lifeDuration: 3
   curve:
     serializedVersion: 2
     m_Curve:
@@ -132,6 +132,7 @@ MonoBehaviour:
   target: {fileID: 0}
   start: {x: 0, y: 0}
   end: {x: 0, y: 0}
+  duration: 0.7
   projectile_max_height: 3
 --- !u!50 &4225856206031715618
 Rigidbody2D:
