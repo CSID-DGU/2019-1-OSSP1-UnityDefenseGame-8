@@ -13,8 +13,6 @@ public class CupcakeTowerScript : MonoBehaviour
     // 컵케이크 판매 비용
     public int sellingValue;  
 
-
-
     private int upgradeLevel;        //Level of the Cupcake Tower
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
     private SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
@@ -115,6 +113,7 @@ public class CupcakeTowerScript : MonoBehaviour
     void OnMouseDown()
     {
         // 해당 선택 타워를 거래용 타워로 지정
+        Debug.Log("CupcakeTowerScript 선택중");
         TradeCupcakeTower.setActiveTower(this);
     }
 }

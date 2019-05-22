@@ -28,9 +28,10 @@ public class TradeCupcakeTowers_Upgrading : TradeCupcakeTower
     
     public override void OnPointerClick(PointerEventData eventData)
     {
-        
-            // 현재 타워가 업그레이드 가능한가? IsUpgradable로 수정
-            if (currentActiveTower.IsUpgradable && currentActiveTower.upgradingCost <= sugarMeter.getSugarAmount())
+        Debug.Log("클릭");
+
+        // 현재 타워가 업그레이드 가능한가? IsUpgradable로 수정
+        if (currentActiveTower.IsUpgradable && currentActiveTower.upgradingCost <= sugarMeter.getSugarAmount())
             {
                 // 결제 진행 - 플레이어의 슈거에서 금액 차감
                 sugarMeter.ChangeSugar(-currentActiveTower.upgradingCost);
