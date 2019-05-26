@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\PandaScript.cs" />
      <Compile Include="Assets\Scripts\PlacingCupcakeTowerScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileScript.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\TradeCupcakeTowers_Upgrading.cs" />
      <Compile Include="Assets\Scripts\Waypoint.cs" />
      <Compile Include="Assets\Scripts\WaypointChainScript.cs" />
+     <Compile Include="Assets\StateMachineBehavioursExample.cs" />
      <None Include="Assets\Graphics\License.txt" />
      <None Include="Assets\Graphics\Readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">

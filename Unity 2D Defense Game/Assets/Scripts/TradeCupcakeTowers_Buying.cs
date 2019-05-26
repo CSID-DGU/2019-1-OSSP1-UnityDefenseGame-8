@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class TradeCupcakeTowers_Buying : TradeCupcakeTower
 {
 
-    // 팔고자 하는 컵케이크 타워 GameObject
+    // 사고자 하는 컵케이크 타워 GameObject
     public GameObject cupcakeTowerPrefab;
 
     /*
@@ -37,7 +37,8 @@ public class TradeCupcakeTowers_Buying : TradeCupcakeTower
             // 새로운 컵케이크 타워 생성
             GameObject newTower = Instantiate(cupcakeTowerPrefab);
             // 새로운 컵케이크 타워가 현재 선택된 타워로 지정
-            currentActiveTower = newTower.GetComponent<CupcakeTowerScript>();
+            // 5/23 수정 -> 반드시 선택되야 변경할 수 있도록 수정
+            // currentActiveTower = newTower.GetComponent<CupcakeTowerScript>();
         }
     }
 }

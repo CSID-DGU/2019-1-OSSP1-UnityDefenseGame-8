@@ -4,26 +4,36 @@ using System.Collections;
 //SCRIPT VERSION - END OF CHAPTER 2
 public class CupcakeTowerScript : MonoBehaviour
 {
+    // 5/23 수정
+
     // 컵케이크 초기 비용
-    public int initialCost;  
+    public int initialCost;
 
     // 컵케이크 업그레이드 비용
     public int upgradingCost;
 
     // 컵케이크 판매 비용
-    public int sellingValue;  
+    public int sellingValue;
+
+    // 추가 : 업그레이드 가능한가? 5/23
+    // public bool IsUpgradable = true;
+
+    //public collierScript mapCollider; //추가추가
 
     private int upgradeLevel;        //Level of the Cupcake Tower
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
     private SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
 
+    // 현재 타워가 업그레이드 가능한지 확인한다.
     //Boolean to check if the tower is upgradable
     public bool IsUpgradable
     {
+
         get
         {
-            return (upgradeLevel + 1 < upgradeSprites.Length);
+            return (upgradeLevel + 1 < upgradeSprites.Length); // 현재 레벨에서 업그레이드를 하면 업그레이드 총 길이보다 작은지 확인한다. 그 여부를 boolean 타입으로 반환한다.
         }
+
     }
 
     void Start()
@@ -34,13 +44,23 @@ public class CupcakeTowerScript : MonoBehaviour
     public void Upgrade()
     {
         //Check if the tower is upgradable
-        if (!IsUpgradable)
-        {
+        //if (!IsUpgradable)
+
+        if (IsUpgradable == false) { // 수정 5/23
             return;
         }
 
+        // IsUpgradable이 true일 경우
         //Increase the level of the tower
         upgradeLevel++;
+
+        /*
+        // 마지막 레벨이면 업그레이드 불가함 추가 5/23
+        if (upgradeLevel < upgradeSprites.Length)
+        {
+            IsUpgradable = false;
+        }
+        */
 
         //Increase the stats of the tower
         rangeRadius += 1f;
@@ -110,10 +130,17 @@ public class CupcakeTowerScript : MonoBehaviour
         elapsedTime += Time.deltaTime;
     }
     // 플레이어가 컵케이크 타워를 클릭할 때 호출되는 함수
-    void OnMouseDown()
+    // 해당 스크립트가 있는 컵케이크 타워를 클릭시
+   
+   //5/19 수정사항 김민선
+    void OnMouseDown() // collider 및 gui
     {
+        
         // 해당 선택 타워를 거래용 타워로 지정
-        Debug.Log("CupcakeTowerScript 선택중");
+        Debug.Log("CupcakeTowerScript 선택");
+        //mapCollider.GetComponents<Collider2D>().enabled = false;
         TradeCupcakeTower.setActiveTower(this);
+        //mapCollider.GetComponents<Collider2D>().enabled = true;
     }
+   
 }
