@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//둘때만 enable하고 나머지는 disable로 둔다.
+
 public class PlacingCupcakeTowerScript : MonoBehaviour
 {
     private GameManagerScript gameManager;
-    private GameManagerScript mapCollider;
-
+    
     // Use this for initialization
     void Start()
     {
+        ColliderEnableScript.ColliderControl.EnableColliders();
         gameManager = FindObjectOfType<GameManagerScript>();
+        // 추가추가
+        //GetComponents<Collider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -28,23 +32,25 @@ public class PlacingCupcakeTowerScript : MonoBehaviour
             GetComponent<Collider>().enabled = false;
         }
 
+
         // 마우스가 컵케이크 타워를 배치할 수 있는 곳에 존재하는지 확인
-        if (Input.GetMouseButtonDown(0) && gameManager.isPointerOnAllowedArea())
+        if (Input.GetMouseButtonDown(0) && ColliderEnableScript.ColliderControl.isPointerOnAllowedArea())
         {
+            //GetComponents<Collider>().enabled = true;
             // CupcakeTowerScript 지금 False 해뒀는데,
             // True로 변경
-            //GetComponents<BoxCollider2D>().enabled = true;
             GetComponent<CupcakeTowerScript>().enabled = true;
             // 컵케이크 타워에 Collider 배치
             //gameObject.AddComponent<BoxCollider2D>();
             // 컵케이크 타워가 더 이상 마우스를 따라다니지 않도록
-            
+
             //mapCollider.GetComponent<Collider2D>().enabled = false;
 
             //placing cupcake tower에 map collider을 주자. 그래서 그렇게하장
+            ColliderEnableScript.ColliderControl.DisableColliders();
             Destroy(this);
             // enable 수정 필요 5/23
-           //GetComponents<BoxCollider2D>().enabled = false;
+           //GetComponents<Collider>().enabled = false;
         }
 
     }

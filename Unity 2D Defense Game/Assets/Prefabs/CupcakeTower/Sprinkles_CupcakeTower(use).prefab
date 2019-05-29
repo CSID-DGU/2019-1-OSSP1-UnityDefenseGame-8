@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: 21300002, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300004, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   rangeRadius: 30
-  reloadTime: 0.3
+  reloadTime: 1
   projectilePrefab: {fileID: 8342757033665276683, guid: 52ec954cfb7b96d42bf4c11106fedd10,
     type: 3}
 --- !u!114 &2510723075001259416

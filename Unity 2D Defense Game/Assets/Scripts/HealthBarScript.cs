@@ -24,6 +24,7 @@ public class HealthBarScript : MonoBehaviour {
         if (value < 0) value = 0;
         //Apply damage to the player
         health -= value;
+        Debug.Log(health);
         //Check if the player has still health and update the Health Bar
         if(health > 0) {
             updateHealthBar();
@@ -36,11 +37,13 @@ public class HealthBarScript : MonoBehaviour {
         return true;
     }
 
-    // test
+    // test// 혹시?
+    /*
     void Update()
     {
         updateHealthBar();
     }
+    */
 
     // 플레이어의 HP를 치료하는 함수
     public void ApplyHealing(int value)

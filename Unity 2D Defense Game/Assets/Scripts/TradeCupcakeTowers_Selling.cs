@@ -19,7 +19,7 @@ public class TradeCupcakeTowers_Selling : TradeCupcakeTower
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("selling에서 현재 선택된 타워는" + currentActiveTower);
+        //Debug.Log("selling에서 현재 선택된 타워는" + currentActiveTower);
         /*
         if (currentActiveTower == null)
         {
@@ -35,8 +35,8 @@ public class TradeCupcakeTowers_Selling : TradeCupcakeTower
     public override void OnPointerClick(PointerEventData eventData)
     {
         //GetComponents<BoxCollider2D>().enabled = false;
-        Debug.Log("왜?");
-        Debug.Log("현재 선택된 컵케이크 타워 냥냥: " + currentActiveTower);
+        //Debug.Log("왜?");
+        //Debug.Log("현재 선택된 컵케이크 타워 냥냥: " + currentActiveTower);
         // 선택된 타워가 없을 경우
         if (currentActiveTower == null)
             return;

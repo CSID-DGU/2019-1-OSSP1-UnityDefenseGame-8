@@ -114,9 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e749305f64dba8489eb18970da94070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveable: 0
-  speed: 0
-  health: 0
+  cakeEatenPerBite: 10
+  moveable: 1
+  speed: 10
+  health: 100
 --- !u!50 &1509091210640903229
 Rigidbody2D:
   serializedVersion: 4

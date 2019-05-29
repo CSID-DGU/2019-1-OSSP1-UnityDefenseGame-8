@@ -199,6 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d86715b2e4547a795088ba4e0366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: {fileID: 2078113988}
+  lose: {fileID: 642495533}
   cupcakeTowerPrefab: {fileID: 6123278051386900489, guid: 422477ea608b9f541a8423037c938bf7,
     type: 3}
 --- !u!1 &159997232
@@ -236,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -322.2, y: 29.9}
+  m_AnchoredPosition: {x: -322.1, y: 28.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159997234
@@ -441,12 +443,12 @@ PrefabInstance:
     - target: {fileID: 8710506730695101026, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.1
+      value: -34.2
       objectReference: {fileID: 0}
     - target: {fileID: 8710506730695101026, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.6
+      value: 15.42
       objectReference: {fileID: 0}
     - target: {fileID: 8710506730695101026, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
@@ -496,12 +498,27 @@ PrefabInstance:
     - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
       propertyPath: health
-      value: 100
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
+        type: 3}
+      propertyPath: moveable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
+        type: 3}
+      propertyPath: cakeEatenPerBite
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809570129012155835, guid: 0b9c7d231888e174ebc78b912acab880,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9c7d231888e174ebc78b912acab880, type: 3}
@@ -659,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.3, y: 0.14, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -690,8 +707,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642495533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400.2, y: -207.2, z: -20}
-  m_LocalScale: {x: 1.6240929, y: 1.5505103, z: 0.76117975}
+  m_LocalPosition: {x: -399.5, y: -209.1, z: -12}
+  m_LocalScale: {x: 2.1328027, y: 1.9532025, z: 0.76117975}
   m_Children: []
   m_Father: {fileID: 1887822793}
   m_RootOrder: 1
@@ -744,6 +761,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &725275292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8710506730695101055, guid: 0b9c7d231888e174ebc78b912acab880,
+    type: 3}
+  m_PrefabInstance: {fileID: 442457944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &764763512
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +786,7 @@ GameObject:
   - component: {fileID: 764763517}
   - component: {fileID: 764763516}
   - component: {fileID: 764763515}
-  - component: {fileID: 764763514}
+  - component: {fileID: 764763525}
   m_Layer: 0
   m_Name: mapCollider
   m_TagString: Untagged
@@ -785,21 +808,6 @@ Transform:
   m_Father: {fileID: 1483361086}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &764763514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764763512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c281bb14748bc504c8e5f8463e945e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstWaypoint: {fileID: 0}
-  losingScreen: {fileID: 0}
-  winningScreen: {fileID: 0}
 --- !u!61 &764763515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1060,6 +1068,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.2113285, y: 10.497307}
   m_EdgeRadius: 0
+--- !u!114 &764763525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764763512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2cae9285d9ffb4f9642f161de5c6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827583871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d86715b2e4547a795088ba4e0366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: {fileID: 2078113988}
+  lose: {fileID: 642495533}
   cupcakeTowerPrefab: {fileID: 1991102467057841876, guid: 1897981025d509947a7a2cd8d5e7b6fa,
     type: 3}
 --- !u!1001 &898110789
@@ -1327,6 +1349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaypointChain
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392478120070753795, guid: 956703d8f4bf58843b98448e55cc4ea6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392478120070753795, guid: 956703d8f4bf58843b98448e55cc4ea6,
+        type: 3}
+      propertyPath: nextWaypoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9062645071654891150, guid: 956703d8f4bf58843b98448e55cc4ea6,
         type: 3}
@@ -1421,7 +1453,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165362557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1450329755}
@@ -1642,6 +1674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d86715b2e4547a795088ba4e0366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: {fileID: 2078113988}
+  lose: {fileID: 642495533}
   cupcakeTowerPrefab: {fileID: 35809406012466457, guid: 6aeb9ec1457f2384a99ed932d408ebee,
     type: 3}
 --- !u!1001 &1299742358
@@ -1700,7 +1734,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401005570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.79, y: 0.8327513, z: 0.7930965}
   m_Children: []
   m_Father: {fileID: 159997233}
@@ -1708,8 +1742,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 0.7}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 6.8, y: 1.7}
+  m_SizeDelta: {x: 99.277, y: 96.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401005572
 MonoBehaviour:
@@ -1724,8 +1758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.754717, b: 0.14853297, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.22264326, g: 0.8301887, b: 0.17621933, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1760,11 +1794,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec286984a3589ab439f5760560d82e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
   health_bar_color:
-  - {r: 0, g: 0.75686276, b: 0.14901961, a: 1}
-  - {r: 1, g: 0.8895351, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.181496, g: 0.6603774, b: 0, a: 0}
+  - {r: 0.84146965, g: 0.8490566, b: 0.10012458, a: 0}
+  - {r: 0.7924528, g: 0.17568529, b: 0.17568529, a: 0}
 --- !u!1 &1450329754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1919,9 @@ MonoBehaviour:
   firstWaypoint: {fileID: 469686310}
   losingScreen: {fileID: 642495533}
   winningScreen: {fileID: 2078113988}
+  pandaPrefab: {fileID: 725275292}
+  numberOfWaves: 3
+  numberOfPandasPerWave: 2
 --- !u!4 &1483361086
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,7 +1962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567491778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 827583873}
@@ -1979,6 +2016,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1615811608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615811609}
+  m_Layer: 0
+  m_Name: Spawning Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615811609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615811608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.3, y: 8.42, z: -0.9882023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1715126235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2256,8 +2323,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078113988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -399.95, y: -207.3, z: -100}
-  m_LocalScale: {x: 1.6218456, y: 1.5238818, z: 0.76117975}
+  m_LocalPosition: {x: -398.2, y: -208.2, z: -9}
+  m_LocalScale: {x: 2.119428, y: 2.0161598, z: 0.76117975}
   m_Children: []
   m_Father: {fileID: 1887822793}
   m_RootOrder: 2

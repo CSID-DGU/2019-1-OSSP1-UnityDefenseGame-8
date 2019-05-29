@@ -7,6 +7,10 @@ using UnityEngine.EventSystems;
 public class TradeCupcakeTowers_Buying : TradeCupcakeTower
 {
 
+    // 오픈소스 수정
+    public GameObject win;
+    public GameObject lose;
+
     // 사고자 하는 컵케이크 타워 GameObject
     public GameObject cupcakeTowerPrefab;
 
@@ -22,9 +26,19 @@ public class TradeCupcakeTowers_Buying : TradeCupcakeTower
     {
 
     }
-
+    // 오픈소스 수정
     public override void OnPointerClick(PointerEventData eventData)
     {
+        if (lose.activeSelf == true)
+        {
+            return;
+        }
+
+        if(win.activeSelf == true)
+        {
+            return;
+        }
+
         // 타워의 초기 금액 정보 찾아옴
         int price = cupcakeTowerPrefab.GetComponent<CupcakeTowerScript>().initialCost;
         // 슈거미터를 정의 안해줘서 그런가? 수정

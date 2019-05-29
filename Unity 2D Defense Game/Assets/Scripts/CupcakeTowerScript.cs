@@ -137,7 +137,7 @@ public class CupcakeTowerScript : MonoBehaviour
     {
         
         // 해당 선택 타워를 거래용 타워로 지정
-        Debug.Log("CupcakeTowerScript 선택");
+        //Debug.Log("CupcakeTowerScript 선택"); // 돌아감
         //mapCollider.GetComponents<Collider2D>().enabled = false;
         TradeCupcakeTower.setActiveTower(this);
         //mapCollider.GetComponents<Collider2D>().enabled = true;

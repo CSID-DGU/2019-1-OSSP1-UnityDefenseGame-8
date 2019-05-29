@@ -17,11 +17,11 @@ public abstract class TradeCupcakeTower : MonoBehaviour, IPointerClickHandler //
     // Use this for initialization
     void Start()
     {
-        Debug.Log("first sugar:" + sugarMeter);
+        //Debug.Log("first sugar:" + sugarMeter);
         // 슈거미터에 대한 참조가 없을 경우 직접 SugarMeterScript에서 참조
         if (sugarMeter == null)
         {
-            Debug.Log("sugar");
+            //Debug.Log("sugar");
             sugarMeter = FindObjectOfType<SugarMeterScript>();
         }
     }

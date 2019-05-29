@@ -26,7 +26,7 @@ public class TradeCupcakeTowers_Upgrading : TradeCupcakeTower
     void Update()
     {
 
-        Debug.Log("upgrading에서 현재 선택된 타워는" + currentActiveTower);
+        //Debug.Log("upgrading에서 현재 선택된 타워는" + currentActiveTower);
 
         /*
         if (currentActiveTower == null)
@@ -50,7 +50,7 @@ public class TradeCupcakeTowers_Upgrading : TradeCupcakeTower
     // 컵케이크 타워를 클릭하는게 아니고, 업그레이드 아이콘을 클릭하는 것
     public override void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("클릭");
+        //Debug.Log("클릭");
 
         // 현재 타워가 업그레이드 가능한가? IsUpgradable로 수정
         if (currentActiveTower.IsUpgradable && currentActiveTower.upgradingCost <= sugarMeter.getSugarAmount())
