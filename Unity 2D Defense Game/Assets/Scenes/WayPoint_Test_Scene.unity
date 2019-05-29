@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
       propertyPath: moveable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8901982351077836530, guid: 0b9c7d231888e174ebc78b912acab880,
         type: 3}
@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec286984a3589ab439f5760560d82e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 50
   health_bar_color:
   - {r: 0.181496, g: 0.6603774, b: 0, a: 0}
   - {r: 0.84146965, g: 0.8490566, b: 0.10012458, a: 0}
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   winningScreen: {fileID: 2078113988}
   pandaPrefab: {fileID: 725275292}
   numberOfWaves: 3
-  numberOfPandasPerWave: 2
+  numberOfPandasPerWave: 5
 --- !u!4 &1483361086
 Transform:
   m_ObjectHideFlags: 0
@@ -2040,7 +2040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615811608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.3, y: 8.42, z: -0.9882023}
+  m_LocalPosition: {x: -42.3, y: 8.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

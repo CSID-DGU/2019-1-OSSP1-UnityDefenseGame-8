@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 324}
   m_MaxSize: {x: 4004, y: 8024}
   vertical: 1
-  controlID: 59
+  controlID: 57
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 352
     height: 731
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -190,10 +190,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 681, y: 324}
-  m_MaxSize: {x: 12006, y: 8024}
+  m_MinSize: {x: 679, y: 324}
+  m_MaxSize: {x: 12004, y: 8024}
   vertical: 0
-  controlID: 58
+  controlID: 75
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,9 +386,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 266.67175, y: 405.39703, z: 121.914795}
+    m_Target: {x: -42.52273, y: 5.776619, z: 149.86502}
     speed: 2
-    m_Value: {x: 266.67175, y: 405.39703, z: 121.914795}
+    m_Value: {x: -42.52273, y: 5.776619, z: 149.86502}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -420,15 +420,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 740.08795
+    m_Target: 51.579494
     speed: 2
-    m_Value: 740.08795
+    m_Value: 51.579494
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.23760572, y: 0.2571051, z: 0.065375656, w: 0.9344338}
+  m_LastSceneViewRotation: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -558,7 +558,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: aafbffffd6fbffffb00d0000fc0d0000140e0000440e0000580e0000
+      m_ExpandedIDs: aafbffffd6fbffffb00d0000140e0000440e0000580e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -620,20 +620,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "C:\\Users\\minsu\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\2019-1-OSSP1-UnityDefenseGame-8\\Unity
     2D Defense Game"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 48}
-    m_SelectedIDs: d20b0000
-    m_LastClickedID: 3026
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 9c0b0000
+    m_LastClickedID: 2972
     m_ExpandedIDs: 00000000d2090000e4090000ae0b0000d20b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -687,8 +687,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 500e0000
+    m_LastClickedInstanceID: 3664
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c8090000be260000700b0000640c0000340b0000080d0000040d0000840c0000f40b0000
     m_RenameOverlay:
