@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 public class TradeCupcakeTowers_Upgrading : TradeCupcakeTower
 {
     
+    // 오픈소스 수정
+    public GameObject win;
+    public GameObject lose;
 
 
     /*
@@ -50,6 +53,16 @@ public class TradeCupcakeTowers_Upgrading : TradeCupcakeTower
     // 컵케이크 타워를 클릭하는게 아니고, 업그레이드 아이콘을 클릭하는 것
     public override void OnPointerClick(PointerEventData eventData)
     {
+        if (lose.activeSelf == true)
+        {
+            return;
+        }
+
+        if (win.activeSelf == true)
+        {
+            return;
+        }
+
         //Debug.Log("클릭");
 
         // 현재 타워가 업그레이드 가능한가? IsUpgradable로 수정

@@ -38,12 +38,12 @@ public class HealthBarScript : MonoBehaviour {
     }
 
     // test// 혹시?
-    /*
+    
     void Update()
     {
         updateHealthBar();
     }
-    */
+    
 
     // 플레이어의 HP를 치료하는 함수
     public void ApplyHealing(int value)

@@ -94,15 +94,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe01e7578b92404f9d61d21c716ff17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCost: 10
-  upgradingCost: 15
-  sellingValue: 5
+  initialCost: 1000
+  upgradingCost: 150
+  sellingValue: 100
   upgradeSprites:
   - {fileID: 21300000, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300002, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   - {fileID: 21300004, guid: bf823fdd13430f14dac4af6143eb2888, type: 3}
   rangeRadius: 30
-  reloadTime: 1
+  reloadTime: 2
   projectilePrefab: {fileID: 8342757033665276683, guid: 52ec954cfb7b96d42bf4c11106fedd10,
     type: 3}
 --- !u!114 &2510723075001259416

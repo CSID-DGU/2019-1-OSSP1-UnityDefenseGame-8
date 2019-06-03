@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PandaScript : MonoBehaviour {
 
+    //public SugarMeterScript sugarmeter; // 6/3 추가
+
     public int cakeEatenPerBite;
 
     private Rigidbody2D rb2d;
@@ -97,13 +99,17 @@ public class PandaScript : MonoBehaviour {
         health -= damage;
         //Then it triggers the Die or the Hit animations based if the Panda is still alive
         if(health <= 0) {
+            // 6/3 판다가 죽을때마다 슈거미터 500씩 증가!
+            //sugarmeter.sugar += 500; // 6/3 추가
+            //sugarmeter.updateSugarMeter();
+            //Debug.Log("sugarmeter : " + sugarmeter.sugar);
             animator.SetTrigger(AnimDieTriggerHash);
             gameManager.OneMorePandaInHeaven();
         }
         else {
             animator.SetTrigger(AnimHitTriggerHash);
         }
-        Debug.Log("Panda Health:" + health);
+        //Debug.Log("Panda Health:" + health);
     }
 
     private void Eat()

@@ -70,10 +70,12 @@ public class CupcakeTowerScript : MonoBehaviour
         currentSpriteRenderer.sprite = upgradeSprites[upgradeLevel];
 
         // 타워의 가격 증가
-        sellingValue += 5;
+        // sellingValue += 5; // 6/3 수정 필요
+        sellingValue += 200;
 
-        // 타워의 업그레이드 비용 증가
-        upgradingCost += 10;
+        // 타워의 업그레이드 비용 증가 // 6/3 수정 필요
+        //upgradingCost += 10;
+        upgradingCost += 500;
     }
 
     public float rangeRadius;           //Maximum distance that the Cupcake Tower can shoot

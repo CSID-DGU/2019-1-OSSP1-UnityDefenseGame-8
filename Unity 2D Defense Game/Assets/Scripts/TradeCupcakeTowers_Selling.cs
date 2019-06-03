@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 public class TradeCupcakeTowers_Selling : TradeCupcakeTower
 
 {
-
-    public 
+    // 오픈소스 수정
+    public GameObject win;
+    public GameObject lose;
+    //public
     /*
     // Use this for initialization
     void Start()
@@ -34,6 +36,18 @@ public class TradeCupcakeTowers_Selling : TradeCupcakeTower
     
     public override void OnPointerClick(PointerEventData eventData)
     {
+
+        if (lose.activeSelf == true)
+        {
+            return;
+        }
+
+        if (win.activeSelf == true)
+        {
+            return;
+        }
+
+
         //GetComponents<BoxCollider2D>().enabled = false;
         //Debug.Log("왜?");
         //Debug.Log("현재 선택된 컵케이크 타워 냥냥: " + currentActiveTower);

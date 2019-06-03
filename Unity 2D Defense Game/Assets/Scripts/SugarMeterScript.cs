@@ -5,7 +5,7 @@ using System.Collections;
 public class SugarMeterScript : MonoBehaviour {
 
     private Text sugarMeter; //Reference to the Text component // 원래는 private
-    private int sugar = 10000; //Amount of sugar that the player possesses // 임의로 10000이라는 값을 주었음 // 원래는 private
+    public int sugar = 10000; //Amount of sugar that the player possesses // 임의로 10000이라는 값을 주었음 // 원래는 private // 6/3 public으로 변경
 
 	void Start () {
         //Get the reference to the Sugar_Meter_Text
@@ -32,7 +32,7 @@ public class SugarMeterScript : MonoBehaviour {
     }
 
     //Function to update the Sugar Meter graphic 
-    void updateSugarMeter() {
+    public void updateSugarMeter() { // 6/3 public 추가
         //Assign the amount of sugar converted to a string to the text in the Sugar Meter
         sugarMeter.text = sugar.ToString();
     }

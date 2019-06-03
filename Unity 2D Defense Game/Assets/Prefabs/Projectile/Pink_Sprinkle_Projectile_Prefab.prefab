@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  lifeDuration: 10
+  lifeDuration: 2
   curve:
     serializedVersion: 2
     m_Curve:

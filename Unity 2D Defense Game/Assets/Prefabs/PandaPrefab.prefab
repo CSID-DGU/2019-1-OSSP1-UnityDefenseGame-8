@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3809570129012155835}
   m_Layer: 0
   m_Name: PandaPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e749305f64dba8489eb18970da94070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sugarmeter: {fileID: 0}
   cakeEatenPerBite: 10
   moveable: 1
-  speed: 10
-  health: 100
+  speed: 5
+  health: 10
 --- !u!50 &1509091210640903229
 Rigidbody2D:
   serializedVersion: 4

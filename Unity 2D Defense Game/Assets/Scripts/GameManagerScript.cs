@@ -10,6 +10,8 @@ public class GameManagerScript : MonoBehaviour
     // 플레이어의 현재 체력(헬스)
     private HealthBarScript playerHealth;
 
+    public SugarMeterScript sugarmeter; // 6/3 추가
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class GameManagerScript : MonoBehaviour
         playerHealth = FindObjectOfType<HealthBarScript>();
 
         spawner = GameObject.Find("Spawning Spot").transform; // 여기서 spawner을 2차로 사용하는 것
-        Debug.Log(spawner.position);
+        //Debug.Log(spawner.position);
 
         StartCoroutine(WavesSpawner()); // 추가
     }
@@ -77,10 +79,13 @@ public class GameManagerScript : MonoBehaviour
     // 판다가 죽을 때마다 1 감소
     public void OneMorePandaInHeaven()
     {
+        // 6/3 판다가 죽을때마다 슈거미터 500씩 증가!
+        sugarmeter.sugar += 500; // 6/3 추가
+        sugarmeter.updateSugarMeter();
         numberOfPandasToDefeat--;
     }
 
-    // 판다가 플레이어의 케이크에 도착했을 떄 플레이어에게 데미지를 줌
+    // 판다가 플레이어의 케이크에 도착했을 때 플레이어에게 데미지를 줌
     // 게임 오버 조건에 만족하면 게임 오버 시킴
     public void BiteTheCake(int damage)
     {
@@ -126,6 +131,7 @@ public class GameManagerScript : MonoBehaviour
         {
             // 판다가 하나의 웨이브 코루틴
             // 코루틴 완료시 웨이브도 종료해 코루틴 지속
+            Debug.Log("numberOfWave 작동" + i);
             yield return PandaSpawner();
             // 각 웨이브마다 생성 판다수 증가
             numberOfPandasPerWave += 3;
@@ -143,7 +149,7 @@ public class GameManagerScript : MonoBehaviour
         //Progressively spawn pandas
         for (int i = 0; i < numberOfPandasPerWave; i++)
         {
-
+            Debug.Log("numberOfPandasPerWave 작동" + i);
             //Debug.Log("실행됩니다1");
             // 위치에 판다를 둔다
             Instantiate(pandaPrefab, spawner.position, Quaternion.identity); // 회전 없음
