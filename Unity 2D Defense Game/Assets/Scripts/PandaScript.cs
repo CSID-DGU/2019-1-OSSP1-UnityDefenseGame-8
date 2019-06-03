@@ -28,6 +28,8 @@ public class PandaScript : MonoBehaviour {
     private bool isAttackingTower;  // 이 판다가 컵케이크타워를 공격중인가?
     private GameObject targetTower; // 공격 대상 타워
 
+    Vector3 lastPos;
+
     // Use this for initialization
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
@@ -42,6 +44,8 @@ public class PandaScript : MonoBehaviour {
             gameManager = FindObjectOfType<GameManagerScript>();
         }
         currentWaypoint = gameManager.firstWaypoint;  // 첫 번째 웨이포인트 지정
+
+        lastPos = transform.position;
     }
 	
 	// Update is called once per frame
@@ -87,6 +91,11 @@ public class PandaScript : MonoBehaviour {
         {
             MoveTowards(currentWaypoint.GetPosition()); // 현재 waypoint로 이동
         }
+
+        // 판다의 움직이는 방향을 face 하기
+        var velocity = transform.position - lastPos;
+        FaceMovingDirection(velocity);
+        lastPos = transform.position;
     }
 
     //Function that based on the speed of the Panda makes it moving towards the destination point, specified as Vector3
@@ -149,6 +158,19 @@ public class PandaScript : MonoBehaviour {
                 targetTower = other.gameObject; // 공격 대상 설정
                 isAttackingTower = true;
             }
+        }
+    }
+
+    // 판다가 움직이는 방향을 기준으로 오브젝트의 로컬스케일을 x축 반전시킨다
+    private void FaceMovingDirection(Vector3 movingVector)
+    {
+        if (movingVector.x > 0.05)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (movingVector.x < -0.05)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
