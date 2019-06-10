@@ -4,12 +4,15 @@ using System.Collections;
 public class PandaScript : MonoBehaviour {
 
     private Rigidbody2D rb2d;
+    private SpriteRenderer spr;
 
     private Waypoint currentWaypoint = null;   // 현재 판다가 향하고 있는 웨이포인트
     private static GameManagerScript gameManager = null;   // private static GameManagerScript. 모든 판다 클래스의 인스턴스들간에 공유한다
     private const float changeDist = 0.1f;    // 이 거리 이하면 다음 웨이포인트로 넘어감
 
     public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
+    public float noStunTime = 1f; // 판다 스턴 무적타임 (연속 스턴 방지용)
+    public float curTime = 1f;
 
     //Private variable to store the animator for handling animations
     private Animator animator;
@@ -32,6 +35,7 @@ public class PandaScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        spr = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         moveable = true;
         //Get the reference to the Animator
@@ -50,8 +54,8 @@ public class PandaScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-	}
+        curTime += Time.deltaTime;
+    }
 
     // MoveTowards() 함수는 여기서 실행되어야 함
     void FixedUpdate()
@@ -128,9 +132,13 @@ public class PandaScript : MonoBehaviour {
             animator.SetTrigger(AnimDieTriggerHash);
         }
         else {
-            animator.SetTrigger(AnimHitTriggerHash);
+            if (curTime >= noStunTime)
+            {
+                // 스턴 무적타임이 지났을때만 스턴상태로 들어감
+                animator.SetTrigger(AnimHitTriggerHash);
+                curTime = 0;
+            }
         }
-        //Debug.Log("Panda Health:" + health);
     }
 
     private void Eat()
@@ -164,13 +172,13 @@ public class PandaScript : MonoBehaviour {
     // 판다가 움직이는 방향을 기준으로 오브젝트의 로컬스케일을 x축 반전시킨다
     private void FaceMovingDirection(Vector3 movingVector)
     {
-        if (movingVector.x > 0.05)
+        if (movingVector.x > 0.05)  // 오른쪽으로 가는 중
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            spr.flipX = false;
         }
-        if (movingVector.x < -0.05)
+        if (movingVector.x < -0.05) // 왼쪽으로 가는 중
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spr.flipX = true;
         }
     }
 }

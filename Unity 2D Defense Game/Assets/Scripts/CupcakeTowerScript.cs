@@ -9,6 +9,16 @@ public class CupcakeTowerScript : MonoBehaviour
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
     private SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
 
+    public int initialCost; // 초기 타워 가격
+    public int upgradingCost;   // 타워 업그레이드 비용
+    public int sellingValue;    // 타워 판매시 플레이어가 얻는 비용
+
+    public float rangeRadius;           //Maximum distance that the Cupcake Tower can shoot
+    public float reloadTime;            //Time before the Cupcake Tower is able to shoot again
+    public GameObject projectilePrefab; //Projectile type that is fired from the Cupcake Tower
+
+    private float elapsedTime;          //Time elapsed from the last time the Cupcake Tower has shot
+
     //Boolean to check if the tower is upgradable
     public bool IsUpgradable
     {
@@ -18,7 +28,7 @@ public class CupcakeTowerScript : MonoBehaviour
         }
     }
 
-    void Start()
+    public void Start()
     {
         currentSpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -40,16 +50,14 @@ public class CupcakeTowerScript : MonoBehaviour
 
         //Change graphics of the tower
         currentSpriteRenderer.sprite = upgradeSprites[upgradeLevel];
+
+        // 타워 업그레이드 비용과 판매시 얻는 가격이 늘어남
+        sellingValue += 5;
+        upgradingCost += 10;
     }
 
-    public float rangeRadius;           //Maximum distance that the Cupcake Tower can shoot
-    public float reloadTime;            //Time before the Cupcake Tower is able to shoot again
-    public GameObject projectilePrefab; //Projectile type that is fired from the Cupcake Tower
-
-    private float elapsedTime;          //Time elapsed from the last time the Cupcake Tower has shot
-
     //Implements the shooting logic
-    void Update()
+    public void Update()
     {
         if (elapsedTime >= reloadTime)
         {
@@ -100,5 +108,12 @@ public class CupcakeTowerScript : MonoBehaviour
     public void Hit()
     {
         elapsedTime = -2f;
+    }
+
+    // 컵케이크 타워의 업그레이드, 판매 등을 위해서 이 타워가 선택(마우스 클릭)되었을 때 호출되는 함수
+    private void OnMouseDown()
+    {
+        // TradeCupCakeTowers 클래스의 static 함수인 SetActiveTower 호출을 통하여, 역시 static 변수인 현재 선택된 타워를 설정하게 된다
+        TradeCupcakeTowers.SetActiveTower(this);
     }
 }

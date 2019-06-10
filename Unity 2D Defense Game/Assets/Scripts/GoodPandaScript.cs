@@ -9,13 +9,14 @@ public class GoodPandaScript : MonoBehaviour
     private CircleCollider2D detectCollider;   // 적군 탐지용 collider
     private BoxCollider2D attackCollider;   // 공격용 collider
     private Vector3 spawnPoint; // 아군판다의 spawnPoint 및 복귀지점
-    AIState currState;  // 아군판다의 현재 state
-    private enum AIState { Wait=1, Attack, GoBack}  //아군판다의 state를 나타내는 enum (대기-Wait, 공격-Attack, 복귀-GoBack)
+    public AIState currState;  // 아군판다의 현재 state
+    public enum AIState { Wait=1, Attack, GoBack}  //아군판다의 state를 나타내는 enum (대기-Wait, 공격-Attack, 복귀-GoBack)
     private GameObject targetEnemy; // 공격 대상 적 판다
     private const float closeDist = 0.1f;   // 거리 판별용 상수
 
-    public int damage = 30; // 아군 판다의 공격능력
+    public int damage = 10; // 아군 판다의 공격능력
     public float speed = 10f;     // 이동속도
+    public float attackRange = 10f; // 기지로부터 최대 얼마나 멀리 판다를 쫓아갈것인가
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +34,10 @@ public class GoodPandaScript : MonoBehaviour
         switch (currState)
         {
             case AIState.Attack:    // 공격 상태. 공격 대상에게 접근
-                if (targetEnemy != null)
+                if (!IsTooFarFromHome() && targetEnemy != null)
                     MoveTowards(targetEnemy.transform.position);
                 else
-                    StateGoBack();  // 적 판다가 죽었으니 복귀상태로 바뀜
+                    StateGoBack();  // 적 판다가 죽었거나 기지에서 너무 멀리 떨어졌으므로 복귀상태로 바뀜
                 break;
             case AIState.GoBack:    // 복귀 상태. spawnPoint로 복귀
                 if (Vector2.Distance((Vector2)transform.position, spawnPoint) > closeDist)
@@ -62,10 +63,16 @@ public class GoodPandaScript : MonoBehaviour
         rb2d.MovePosition(move_vector); // 이동
     }
 
+    // 현재 쿠키가 기지에서 너무 먼가? (attackRange 변수를 기준으로)
+    bool IsTooFarFromHome()
+    {
+        return (attackRange < Vector3.Distance(transform.parent.position, transform.position));
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // 적 팬더 감지
-        if(other.tag == "Enemy")
+        if(!IsTooFarFromHome() && other.tag == "Enemy")
         {
             switch (currState)
             {
@@ -73,8 +80,11 @@ public class GoodPandaScript : MonoBehaviour
                     StateAttack(other.gameObject);
                     break;
                 case AIState.Attack:
-                    targetEnemy.GetComponent<PandaScript>().Hit(damage);    // 데미지 입힘
-                    StateGoBack();
+                    if(other.gameObject == targetEnemy)
+                    {
+                        targetEnemy.GetComponent<PandaScript>().Hit(damage);
+                    }
+                    StateGoBack();  // 연속 공격을 위해 되돌아가기
                     break;
                 case AIState.GoBack:
                     StateAttack(other.gameObject);
