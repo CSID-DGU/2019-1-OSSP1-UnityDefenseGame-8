@@ -71,6 +71,8 @@ public class GoodPandaScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject == null)
+            return;
         // 적 팬더 감지
         if(!IsTooFarFromHome() && other.tag == "Enemy")
         {
@@ -80,9 +82,11 @@ public class GoodPandaScript : MonoBehaviour
                     StateAttack(other.gameObject);
                     break;
                 case AIState.Attack:
-                    if(other.gameObject == targetEnemy)
+                    if(targetEnemy != null && other.gameObject == targetEnemy)
                     {
-                        targetEnemy.GetComponent<PandaScript>().Hit(damage);
+                        var panda = targetEnemy.GetComponent<PandaScript>();
+                        if (panda != null)
+                            panda.Hit(damage);
                     }
                     StateGoBack();  // 연속 공격을 위해 되돌아가기
                     break;

@@ -26,10 +26,11 @@ public class PandaScript : MonoBehaviour {
     private int AnimHitTriggerHash = Animator.StringToHash("HitTrigger");
     private int AnimEatTriggerHash = Animator.StringToHash("EatTrigger");
 
-    private float myAttackProbability;    // 판다가 컵케이크타워를 공격할 확률
     public float attackProbability = 0.1f;   // 이 확률로 처음 보는 컵케이크 타워를 공격할 것
     private bool isAttackingTower;  // 이 판다가 컵케이크타워를 공격중인가?
     private GameObject targetTower; // 공격 대상 타워
+
+    public int cakeEatenPerBite = 5;    // 판다의 케이크 공격 데미지
 
     Vector3 lastPos;
 
@@ -40,7 +41,6 @@ public class PandaScript : MonoBehaviour {
         moveable = true;
         //Get the reference to the Animator
         animator = GetComponent<Animator>();
-        myAttackProbability = -1;
 
         // set static GamaManagerScript variable gameManager
         if (gameManager == null)
@@ -66,9 +66,9 @@ public class PandaScript : MonoBehaviour {
             // 컵케이크에 충분히 가까이 다가갔으므로 자폭공격
             if(Vector2.Distance(transform.position, targetTower.transform.position) < changeDist)
             {
-                Eat();  // 판다가 케이크를 먹고 펑 터지는 애니메이션 trigger
                 targetTower.GetComponent<CupcakeTowerScript>().Hit(); // 컵케이크 타워에 패널티를 줌
                 isAttackingTower = false;   // 공격을 완료했으므로 isAttackingTower는 false가 됨
+                Eat();  // 판다가 케이크를 먹고 펑 터지는 애니메이션 trigger
             }
             else
             { 
@@ -80,8 +80,11 @@ public class PandaScript : MonoBehaviour {
         // 맨 마지막 웨이포인트에 도착했다. 즉, 판다가 케이크에 도달했다
         if(currentWaypoint == null)
         {
-            // 케이크 먹는 애니메이션 시작. StateBehaviour script에서 Object를 Destory하므로 여기서 Destory() 부를 필요 없음
-            animator.SetTrigger(AnimEatTriggerHash);
+            // 플레이어 HP에 영향 주기
+            gameManager.BiteTheCake(cakeEatenPerBite);
+
+            // 케이크 먹는 애니메이션 시작.
+            Eat();
             return;
         }
 
@@ -129,7 +132,7 @@ public class PandaScript : MonoBehaviour {
         health -= damage;
         //Then it triggers the Die or the Hit animations based if the Panda is still alive
         if(health <= 0) {
-            animator.SetTrigger(AnimDieTriggerHash);
+            Die();
         }
         else {
             if (curTime >= noStunTime)
@@ -141,10 +144,22 @@ public class PandaScript : MonoBehaviour {
         }
     }
 
+    private void Die()
+    {
+        speed = 0;
+        // 게임 매니저에서 죽은 판다 등록
+        gameManager.OneMorePandaInHeaven();
+        animator.SetTrigger(AnimDieTriggerHash);
+        Destroy(this);
+    }
+
     private void Eat()
     {
         speed = 0;
         animator.SetTrigger(AnimEatTriggerHash);
+        // 게임 매니저에서 죽은 판다 등록
+        gameManager.OneMorePandaInHeaven();
+        Destroy(this);  // fixed update로 인하여 계속해서 데미지를 주는 것을 막기 위해 이 스크립트를 destroy 한다.
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -160,7 +175,7 @@ public class PandaScript : MonoBehaviour {
         else if (other.tag == "CupcakeTower")
         {
             // 랜덤한 확률로 컵케이크 타워를 공격
-            myAttackProbability = Random.Range(0f, 1f);
+            float myAttackProbability = Random.Range(0f, 1f);
             if(myAttackProbability <= attackProbability)
             {
                 targetTower = other.gameObject; // 공격 대상 설정

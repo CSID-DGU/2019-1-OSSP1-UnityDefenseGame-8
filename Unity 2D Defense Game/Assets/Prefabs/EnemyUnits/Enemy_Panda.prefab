@@ -115,9 +115,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveable: 0
-  speed: 5
+  noStunTime: 1
+  curTime: 1
+  speed: 10
   health: 10
   attackProbability: 0.1
+  cakeEatenPerBite: 5
 --- !u!50 &1009057714055955891
 Rigidbody2D:
   serializedVersion: 4
