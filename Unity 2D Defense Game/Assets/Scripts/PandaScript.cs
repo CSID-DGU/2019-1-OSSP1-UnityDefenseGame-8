@@ -150,7 +150,7 @@ public class PandaScript : MonoBehaviour {
         // 게임 매니저에서 죽은 판다 등록
         gameManager.OneMorePandaInHeaven();
         animator.SetTrigger(AnimDieTriggerHash);
-        Destroy(this);
+        this.enabled = false;
     }
 
     private void Eat()
@@ -159,7 +159,7 @@ public class PandaScript : MonoBehaviour {
         animator.SetTrigger(AnimEatTriggerHash);
         // 게임 매니저에서 죽은 판다 등록
         gameManager.OneMorePandaInHeaven();
-        Destroy(this);  // fixed update로 인하여 계속해서 데미지를 주는 것을 막기 위해 이 스크립트를 destroy 한다.
+        this.enabled = false;  // fixed update로 인하여 계속해서 데미지를 주는 것을 막기 위해 이 스크립트를 disable 한다.
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -72,10 +72,9 @@ public class GameManagerScript : MonoBehaviour
     // 정해진 웨이브 수 만큼 판다들을 스폰한다. 모든 웨이브를 플레이어가 견뎌냈다면 승리이므로 GameOver(true)를 호출하여 승리화면을 출력한다.
     private IEnumerator WavesSpawner()
     {
-        Debug.Log("Spawner Started");
         for(int i=0; i<numberOfWaves; ++i)
         {
-            Debug.Log(i + "th wave starts");
+            Debug.Log("Wave num :" + i);
             // 현재 웨이브에 속하는 판다들을 스폰
             yield return PandaSpawner();
 
@@ -93,18 +92,17 @@ public class GameManagerScript : MonoBehaviour
         numberOfPandasToDefeat = numberOfPandasPerWave;
         for(int i=0; i<numberOfPandasPerWave; ++i)
         {
-            Debug.Log(i + "th panda spawned");
+            Debug.Log(i + "th panda");
             // 스폰 포인트에 판다 스폰함
             Instantiate(pandaPrefab, spawner.position, Quaternion.identity);
 
             // 임의 시간동안 기다린 후 다음 판다를 스폰
-            float ratio = ((i + 1) * 1f) / (numberOfPandasPerWave); // 0으로 나누는 것 방지하기 위해 numberOfPandasPerWave-1가 아닌 numberOfPandasPerWave 그대로 사용하고, i에 1을 더함
-            float timeToWait = Mathf.Lerp(3f, 5f, ratio) + Random.Range(0f, 2f);
-            Debug.Log("Next spawn: " + timeToWait);
+            float ratio = ((i + 1) * 1f) / (numberOfPandasPerWave); // 0으로 나누는 것 방지하기 위해 numberOfPandasPerWave-1가 아닌 numberOfPandasPerWave 그대로 사용
+            float timeToWait = Mathf.Lerp(1f, 3f, ratio) + Random.Range(0f, 2f);
             yield return new WaitForSeconds(timeToWait);
         }
 
         // 스폰된 판다들이 모두 죽으면 현재 웨이브 종료됨
-        yield return new WaitUntil(() => numberOfPandasToDefeat <= 0);
+        yield return new WaitUntil(() => numberOfPandasToDefeat <= 0);  // 람다 식 사용
     }
 }
