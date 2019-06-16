@@ -60,11 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ButtonTextScript.cs" />
     <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\GoodPandaScript.cs" />
     <Compile Include="Assets\Scripts\GoodPandaTowerScript.cs" />
     <Compile Include="Assets\Scripts\HealthBarScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenuManagerScript.cs" />
     <Compile Include="Assets\Scripts\NoCupcakeAreaScript.cs" />
     <Compile Include="Assets\Scripts\PandaScript.cs" />
     <Compile Include="Assets\Scripts\PlacingCupcakeTowerScript.cs" />
