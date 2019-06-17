@@ -14,6 +14,9 @@ public class GoodPandaScript : MonoBehaviour
     private GameObject targetEnemy; // 공격 대상 적 판다
     private const float closeDist = 0.1f;   // 거리 판별용 상수
 
+    private readonly float attackCooltime = 1f;
+    private float curtime;
+
     public int damage = 10; // 아군 판다의 공격능력
     public float speed = 10f;     // 이동속도
     public float attackRange = 10f; // 기지로부터 최대 얼마나 멀리 판다를 쫓아갈것인가
@@ -26,6 +29,11 @@ public class GoodPandaScript : MonoBehaviour
         attackCollider = GetComponent<BoxCollider2D>();
         spawnPoint = transform.position;
         StateWait();    // 대기상태로 시작
+    }
+
+    private void Update()
+    {
+        curtime += Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -86,7 +94,14 @@ public class GoodPandaScript : MonoBehaviour
                     {
                         var panda = targetEnemy.GetComponent<PandaScript>();
                         if (panda != null)
-                            panda.Hit(damage);
+                        {
+                            if(curtime >= attackCooltime)
+                            {
+                                curtime = 0;
+                                panda.Hit(damage);
+                            }
+                        }
+                            
                     }
                     StateGoBack();  // 연속 공격을 위해 되돌아가기
                     break;

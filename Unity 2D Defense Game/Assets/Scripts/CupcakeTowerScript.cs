@@ -5,9 +5,9 @@ using System.Collections;
 public class CupcakeTowerScript : MonoBehaviour
 {
 
-    private int upgradeLevel;        //Level of the Cupcake Tower
+    protected int upgradeLevel;        //Level of the Cupcake Tower
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
-    private SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
+    protected SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
 
     public int initialCost; // 초기 타워 가격
     public int upgradingCost;   // 타워 업그레이드 비용
@@ -45,8 +45,8 @@ public class CupcakeTowerScript : MonoBehaviour
         upgradeLevel++;
 
         //Increase the stats of the tower
-        rangeRadius += 1f;
-        reloadTime -= 0.5f;
+        rangeRadius += 5f;
+        reloadTime -= 0.1f;
 
         //Change graphics of the tower
         currentSpriteRenderer.sprite = upgradeSprites[upgradeLevel];

@@ -159,6 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currState: 0
-  damage: 20
+  damage: 8
   speed: 10
   attackRange: 10

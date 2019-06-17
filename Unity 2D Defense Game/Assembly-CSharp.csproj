@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonTextScript.cs" />
+    <Compile Include="Assets\Scripts\ChocolateTowerScript.cs" />
     <Compile Include="Assets\Scripts\CupcakeTowerScript.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\GoodPandaScript.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Assets\Scripts\PandaScript.cs" />
     <Compile Include="Assets\Scripts\PlacingCupcakeTowerScript.cs" />
     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnTextScript.cs" />
+    <Compile Include="Assets\Scripts\SprinkleTowerScript.cs" />
     <Compile Include="Assets\Scripts\StateMachineBehaviour_DestroyOnExit.cs" />
     <Compile Include="Assets\Scripts\StateMachineBehaviour_PandaWhileBeingHit.cs" />
     <Compile Include="Assets\Scripts\SugarMeterScript.cs" />

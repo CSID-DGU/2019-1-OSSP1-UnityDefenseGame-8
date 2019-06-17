@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 35809406012466460}
   - component: {fileID: 35809406012466459}
-  - component: {fileID: 35809406012466458}
   - component: {fileID: 7260052311641951814}
   - component: {fileID: 5765962176120009536}
+  - component: {fileID: 2201409606910886519}
   m_Layer: 0
   m_Name: Chocolatechip_CupcakeTower
   m_TagString: CupcakeTower
@@ -82,29 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &35809406012466458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35809406012466457}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfe01e7578b92404f9d61d21c716ff17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeSprites:
-  - {fileID: 21300006, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
-  - {fileID: 21300008, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
-  - {fileID: 21300010, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
-  initialCost: 10
-  upgradingCost: 15
-  sellingValue: 5
-  rangeRadius: 30
-  reloadTime: 3
-  projectilePrefab: {fileID: 1930479933805910815, guid: a8ef206a647f59240bfd27a7e6253947,
-    type: 3}
 --- !u!61 &7260052311641951814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +120,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a279fca7e05863341a53ee520f7076c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2201409606910886519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35809406012466457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4622cef29541d144896f3f2a2351dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeSprites:
+  - {fileID: 21300006, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
+  - {fileID: 21300008, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
+  - {fileID: 21300010, guid: ce7a3ff6bc78e1f4f9b4404650c7df64, type: 3}
+  initialCost: 10
+  upgradingCost: 15
+  sellingValue: 5
+  rangeRadius: 20
+  reloadTime: 3
+  projectilePrefab: {fileID: 1930479933805910815, guid: a8ef206a647f59240bfd27a7e6253947,
+    type: 3}

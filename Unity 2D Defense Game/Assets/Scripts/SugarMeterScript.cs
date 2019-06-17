@@ -5,7 +5,7 @@ using System.Collections;
 public class SugarMeterScript : MonoBehaviour {
 
     private Text sugarMeter; //Reference to the Text component
-    private int sugar = 10000; //Amount of sugar that the player possesses
+    private int sugar = 50; //Amount of sugar that the player possesses
 
 	void Start () {
         //Get the reference to the Sugar_Meter_Text

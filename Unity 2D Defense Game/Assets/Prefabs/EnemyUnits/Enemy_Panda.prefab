@@ -118,7 +118,7 @@ MonoBehaviour:
   noStunTime: 1
   curTime: 1
   speed: 10
-  health: 10
+  health: 15
   attackProbability: 0.1
   cakeEatenPerBite: 5
 --- !u!50 &1009057714055955891

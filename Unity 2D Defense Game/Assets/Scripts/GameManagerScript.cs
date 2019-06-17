@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
+    private static GameManagerScript _instance;    // 싱글톤 인스턴스
+    public static GameManagerScript Instance
+    {
+        get { return _instance; }
+    }
+
     public Waypoint firstWaypoint;  // 판다가 따라갈 경로의 첫 번째 웨이포인트
 
     public GameObject winningScreen;
     public GameObject losingScreen;
 
+    public SugarMeterScript sugarmeter;
     private HealthBarScript playerHealth;
     private int numberOfPandasToDefeat;
 
@@ -18,11 +26,27 @@ public class GameManagerScript : MonoBehaviour
     public int numberOfWaves;
     public int numberOfPandasPerWave;
 
+    // 적의 등장을 알리는 Text UI
+    public Text SpawnText;
+
+    private void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            _instance = this;
+        }
+
+        playerHealth = FindObjectOfType<HealthBarScript>();
+        sugarmeter = FindObjectOfType<SugarMeterScript>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = FindObjectOfType<HealthBarScript>();
         // 판다 스포닝 포인트의 transform을 가져옴
         spawner = GameObject.Find("SpawningPoint").transform;
 
@@ -52,9 +76,13 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    // 판다 한 마리가 죽었을 경우
     public void OneMorePandaInHeaven()
     {
         numberOfPandasToDefeat--;
+
+        // 슈거 올라감
+        sugarmeter.ChangeSugar(10);
     }
 
     public void BiteTheCake(int damage)
@@ -74,7 +102,10 @@ public class GameManagerScript : MonoBehaviour
     {
         for(int i=0; i<numberOfWaves; ++i)
         {
-            Debug.Log("Wave num :" + i);
+            // 웨이브 정보를 Text에 업데이트하고 출력
+            SpawnText.text =  "Wave " + (i + 1) + ":\n" + (numberOfPandasPerWave) + " pandas";
+            SpawnText.GetComponent<SpawnTextScript>().DisplayText();
+
             // 현재 웨이브에 속하는 판다들을 스폰
             yield return PandaSpawner();
 
@@ -92,16 +123,15 @@ public class GameManagerScript : MonoBehaviour
         numberOfPandasToDefeat = numberOfPandasPerWave;
         for(int i=0; i<numberOfPandasPerWave; ++i)
         {
-            Debug.Log(i + "th panda");
             // 스폰 포인트에 판다 스폰함
             Instantiate(pandaPrefab, spawner.position, Quaternion.identity);
 
             // 임의 시간동안 기다린 후 다음 판다를 스폰
-            float ratio = ((i + 1) * 1f) / (numberOfPandasPerWave); // 0으로 나누는 것 방지하기 위해 numberOfPandasPerWave-1가 아닌 numberOfPandasPerWave 그대로 사용
-            float timeToWait = Mathf.Lerp(1f, 3f, ratio) + Random.Range(0f, 2f);
+            float timeToWait = Random.Range(0.5f, 2f);
             yield return new WaitForSeconds(timeToWait);
         }
 
+        
         // 스폰된 판다들이 모두 죽으면 현재 웨이브 종료됨
         yield return new WaitUntil(() => numberOfPandasToDefeat <= 0);  // 람다 식 사용
     }

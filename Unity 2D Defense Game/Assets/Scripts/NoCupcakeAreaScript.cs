@@ -38,20 +38,17 @@ public class NoCupcakeAreaScript : MonoBehaviour
     // OnMouseEnter는 마우스 포인터가 처음 콜라이더에 들어왔을 때 호출된다. 
     private void OnMouseEnter()
     {
-        Debug.Log("No");
         _isPointerOnAllowedArea = false;
     }
 
     // OnMouseEnter를 보완하기 위해 OnMouseOver 또한 구현한다.
     private void OnMouseOver()
     {
-        Debug.Log("No");
         _isPointerOnAllowedArea = false;
     }
 
     private void OnMouseExit()
     {
-        Debug.Log("Yes");
         _isPointerOnAllowedArea = true;
     }
 

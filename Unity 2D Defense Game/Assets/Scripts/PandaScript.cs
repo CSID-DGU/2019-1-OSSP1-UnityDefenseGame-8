@@ -147,8 +147,6 @@ public class PandaScript : MonoBehaviour {
     private void Die()
     {
         speed = 0;
-        // 게임 매니저에서 죽은 판다 등록
-        gameManager.OneMorePandaInHeaven();
         animator.SetTrigger(AnimDieTriggerHash);
         this.enabled = false;
     }
