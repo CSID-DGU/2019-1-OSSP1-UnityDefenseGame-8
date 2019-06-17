@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SprinkleTowerScript : CupcakeTowerScript
 {
-    new public void Upgrade()
+    override public void Upgrade()
     {
         //Check if the tower is upgradable
         if (!IsUpgradable)

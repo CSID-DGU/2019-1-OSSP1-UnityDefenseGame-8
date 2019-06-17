@@ -29,6 +29,9 @@ public class GameManagerScript : MonoBehaviour
     // 적의 등장을 알리는 Text UI
     public Text SpawnText;
 
+    public Text upgradeCostText;
+    public Text sellingValueText;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)

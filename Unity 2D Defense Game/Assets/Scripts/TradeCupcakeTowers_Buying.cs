@@ -9,6 +9,7 @@ public class TradeCupcakeTowers_Buying : TradeCupcakeTowers
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("Buy BUtton clicked");
         int price = cupcakeTowerPrefab.GetComponent<CupcakeTowerScript>().initialCost;
         if(price <= sugarMeter.getSugarAmount())
         {

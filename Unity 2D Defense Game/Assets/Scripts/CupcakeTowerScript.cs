@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 //SCRIPT VERSION - END OF CHAPTER 2
 public class CupcakeTowerScript : MonoBehaviour
 {
-
     protected int upgradeLevel;        //Level of the Cupcake Tower
     public Sprite[] upgradeSprites; //Different sprites for the different levels of the Cupcake Tower
     protected SpriteRenderer currentSpriteRenderer; // 현재 컵케이크 타워의 spriteRenderer 참조변수
@@ -33,7 +33,7 @@ public class CupcakeTowerScript : MonoBehaviour
         currentSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Upgrade()
+    virtual public void Upgrade()
     {
         //Check if the tower is upgradable
         if (!IsUpgradable)

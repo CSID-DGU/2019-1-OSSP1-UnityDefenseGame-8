@@ -7,7 +7,6 @@ public class PandaScript : MonoBehaviour {
     private SpriteRenderer spr;
 
     private Waypoint currentWaypoint = null;   // 현재 판다가 향하고 있는 웨이포인트
-    private static GameManagerScript gameManager = null;   // private static GameManagerScript. 모든 판다 클래스의 인스턴스들간에 공유한다
     private const float changeDist = 0.1f;    // 이 거리 이하면 다음 웨이포인트로 넘어감
 
     public bool moveable;   // 판다가 이동 가능한가? (맞고있는 동안에는 false가 될 것)
@@ -43,11 +42,7 @@ public class PandaScript : MonoBehaviour {
         animator = GetComponent<Animator>();
 
         // set static GamaManagerScript variable gameManager
-        if (gameManager == null)
-        {
-            gameManager = FindObjectOfType<GameManagerScript>();
-        }
-        currentWaypoint = gameManager.firstWaypoint;  // 첫 번째 웨이포인트 지정
+        currentWaypoint = GameManagerScript.Instance.firstWaypoint;  // 첫 번째 웨이포인트 지정
 
         lastPos = transform.position;
     }
@@ -81,7 +76,7 @@ public class PandaScript : MonoBehaviour {
         if(currentWaypoint == null)
         {
             // 플레이어 HP에 영향 주기
-            gameManager.BiteTheCake(cakeEatenPerBite);
+            GameManagerScript.Instance.BiteTheCake(cakeEatenPerBite);
 
             // 케이크 먹는 애니메이션 시작.
             Eat();
@@ -155,8 +150,6 @@ public class PandaScript : MonoBehaviour {
     {
         speed = 0;
         animator.SetTrigger(AnimEatTriggerHash);
-        // 게임 매니저에서 죽은 판다 등록
-        gameManager.OneMorePandaInHeaven();
         this.enabled = false;  // fixed update로 인하여 계속해서 데미지를 주는 것을 막기 위해 이 스크립트를 disable 한다.
     }
 

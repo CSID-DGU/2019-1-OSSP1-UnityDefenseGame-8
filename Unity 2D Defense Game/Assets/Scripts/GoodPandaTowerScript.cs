@@ -42,10 +42,30 @@ public class GoodPandaTowerScript : CupcakeTowerScript
             }
     }
 
-    // 기존 컵케이크타워의 발사체 발사 부분은 해당하지 않으므로 Update함수를 재정의
-    new void Update()
+    override public void Upgrade()
     {
+        //Check if the tower is upgradable
+        if (!IsUpgradable)
+        {
+            return;
+        }
 
+        //Increase the level of the tower
+        upgradeLevel++;
+
+        //Change graphics of the tower
+        currentSpriteRenderer.sprite = upgradeSprites[upgradeLevel];
+
+        // 타워 업그레이드 비용과 판매시 얻는 가격이 늘어남
+        sellingValue += 5;
+        upgradingCost += 10;
+
+        // 업그레이드 시 쿠키 유닛 수를 증가
+        maxGoodPanda += 2;
+
+        // 유닛 수를 증가시킨 만큼 스폰함
+        SpawnGoodPanda(2);
+        curGoodPanda = maxGoodPanda;
     }
 
     new void Hit()

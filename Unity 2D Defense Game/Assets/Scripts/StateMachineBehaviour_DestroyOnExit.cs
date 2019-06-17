@@ -10,6 +10,7 @@ public class StateMachineBehaviour_DestroyOnExit : StateMachineBehaviour {
 
         // 게임 매니저에서 죽은 판다 한 마리 추가
         GameManagerScript.Instance.OneMorePandaInHeaven();
+        Debug.Log("Panda dies");
     }
 
 }
